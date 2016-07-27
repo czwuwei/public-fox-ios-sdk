@@ -14,4 +14,8 @@
     return [super initWithEventName:@"FOX_tutorial" andLtvId:ltvId];
 }
 
+-(instancetype)initWithEventName:(NSString *)eventName andLtvId:(NSUInteger)ltvId {
+    return [super initWithEventName:eventName andLtvId:ltvId];
+}
+
 @end

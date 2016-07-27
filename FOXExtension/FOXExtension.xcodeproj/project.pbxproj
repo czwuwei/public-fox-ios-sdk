@@ -10,20 +10,20 @@
 		B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B80753081D421F4B00A80949 /* FOXTutorialEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753061D421F4B00A80949 /* FOXTutorialEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B80753091D421F4B00A80949 /* FOXTutorialEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B80753071D421F4B00A80949 /* FOXTutorialEvent.m */; };
-		B807530C1D42203A00A80949 /* FOXLevelAchieveEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530A1D42203A00A80949 /* FOXLevelAchieveEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B807530D1D42203A00A80949 /* FOXLevelAchieveEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B807530B1D42203A00A80949 /* FOXLevelAchieveEvent.m */; };
-		B80753101D42247A00A80949 /* FOXRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530E1D42247A00A80949 /* FOXRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B80753111D42247A00A80949 /* FOXRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = B807530F1D42247A00A80949 /* FOXRegistration.m */; };
-		B80753141D42252D00A80949 /* FOXStageAchieveEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753121D42252D00A80949 /* FOXStageAchieveEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B80753151D42252D00A80949 /* FOXStageAchieveEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B80753131D42252D00A80949 /* FOXStageAchieveEvent.m */; };
+		B807530C1D42203A00A80949 /* FOXAchieveLevelEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530A1D42203A00A80949 /* FOXAchieveLevelEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B807530D1D42203A00A80949 /* FOXAchieveLevelEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B807530B1D42203A00A80949 /* FOXAchieveLevelEvent.m */; };
+		B80753101D42247A00A80949 /* FOXRegistrationEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530E1D42247A00A80949 /* FOXRegistrationEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80753111D42247A00A80949 /* FOXRegistrationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B807530F1D42247A00A80949 /* FOXRegistrationEvent.m */; };
+		B80753141D42252D00A80949 /* FOXAchieveStageEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753121D42252D00A80949 /* FOXAchieveStageEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80753151D42252D00A80949 /* FOXAchieveStageEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B80753131D42252D00A80949 /* FOXAchieveStageEvent.m */; };
 		B80753181D42262700A80949 /* FOXPurchaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753161D42262700A80949 /* FOXPurchaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B80753191D42262700A80949 /* FOXPurchaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B80753171D42262700A80949 /* FOXPurchaseEvent.m */; };
 		B807531C1D4227C200A80949 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B807531B1D4227C200A80949 /* StoreKit.framework */; };
 		B81B88E81D46188400A62C59 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B81B88E91D4618B200A62C59 /* FOXTutorialEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753061D421F4B00A80949 /* FOXTutorialEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B81B88EA1D4618B200A62C59 /* FOXLevelAchieveEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530A1D42203A00A80949 /* FOXLevelAchieveEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B81B88EB1D4618B200A62C59 /* FOXRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530E1D42247A00A80949 /* FOXRegistration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B81B88EC1D4618B200A62C59 /* FOXStageAchieveEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753121D42252D00A80949 /* FOXStageAchieveEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B81B88EA1D4618B200A62C59 /* FOXAchieveLevelEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530A1D42203A00A80949 /* FOXAchieveLevelEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B81B88EB1D4618B200A62C59 /* FOXRegistrationEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B807530E1D42247A00A80949 /* FOXRegistrationEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B81B88EC1D4618B200A62C59 /* FOXAchieveStageEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753121D42252D00A80949 /* FOXAchieveStageEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B81B88ED1D4618B200A62C59 /* FOXPurchaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B80753161D42262700A80949 /* FOXPurchaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -33,12 +33,12 @@
 		B80752E91D421E6D00A80949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B80753061D421F4B00A80949 /* FOXTutorialEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXTutorialEvent.h; sourceTree = "<group>"; };
 		B80753071D421F4B00A80949 /* FOXTutorialEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXTutorialEvent.m; sourceTree = "<group>"; };
-		B807530A1D42203A00A80949 /* FOXLevelAchieveEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXLevelAchieveEvent.h; sourceTree = "<group>"; };
-		B807530B1D42203A00A80949 /* FOXLevelAchieveEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXLevelAchieveEvent.m; sourceTree = "<group>"; };
-		B807530E1D42247A00A80949 /* FOXRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXRegistration.h; sourceTree = "<group>"; };
-		B807530F1D42247A00A80949 /* FOXRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXRegistration.m; sourceTree = "<group>"; };
-		B80753121D42252D00A80949 /* FOXStageAchieveEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXStageAchieveEvent.h; sourceTree = "<group>"; };
-		B80753131D42252D00A80949 /* FOXStageAchieveEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXStageAchieveEvent.m; sourceTree = "<group>"; };
+		B807530A1D42203A00A80949 /* FOXAchieveLevelEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXAchieveLevelEvent.h; sourceTree = "<group>"; };
+		B807530B1D42203A00A80949 /* FOXAchieveLevelEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXAchieveLevelEvent.m; sourceTree = "<group>"; };
+		B807530E1D42247A00A80949 /* FOXRegistrationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXRegistrationEvent.h; sourceTree = "<group>"; };
+		B807530F1D42247A00A80949 /* FOXRegistrationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXRegistrationEvent.m; sourceTree = "<group>"; };
+		B80753121D42252D00A80949 /* FOXAchieveStageEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXAchieveStageEvent.h; sourceTree = "<group>"; };
+		B80753131D42252D00A80949 /* FOXAchieveStageEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXAchieveStageEvent.m; sourceTree = "<group>"; };
 		B80753161D42262700A80949 /* FOXPurchaseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXPurchaseEvent.h; sourceTree = "<group>"; };
 		B80753171D42262700A80949 /* FOXPurchaseEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXPurchaseEvent.m; sourceTree = "<group>"; };
 		B807531B1D4227C200A80949 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -100,12 +100,12 @@
 			children = (
 				B80753061D421F4B00A80949 /* FOXTutorialEvent.h */,
 				B80753071D421F4B00A80949 /* FOXTutorialEvent.m */,
-				B807530A1D42203A00A80949 /* FOXLevelAchieveEvent.h */,
-				B807530B1D42203A00A80949 /* FOXLevelAchieveEvent.m */,
-				B807530E1D42247A00A80949 /* FOXRegistration.h */,
-				B807530F1D42247A00A80949 /* FOXRegistration.m */,
-				B80753121D42252D00A80949 /* FOXStageAchieveEvent.h */,
-				B80753131D42252D00A80949 /* FOXStageAchieveEvent.m */,
+				B807530E1D42247A00A80949 /* FOXRegistrationEvent.h */,
+				B807530F1D42247A00A80949 /* FOXRegistrationEvent.m */,
+				B807530A1D42203A00A80949 /* FOXAchieveLevelEvent.h */,
+				B807530B1D42203A00A80949 /* FOXAchieveLevelEvent.m */,
+				B80753121D42252D00A80949 /* FOXAchieveStageEvent.h */,
+				B80753131D42252D00A80949 /* FOXAchieveStageEvent.m */,
 				B80753161D42262700A80949 /* FOXPurchaseEvent.h */,
 				B80753171D42262700A80949 /* FOXPurchaseEvent.m */,
 			);
@@ -130,12 +130,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B80753141D42252D00A80949 /* FOXStageAchieveEvent.h in Headers */,
+				B80753141D42252D00A80949 /* FOXAchieveStageEvent.h in Headers */,
 				B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */,
 				B80753081D421F4B00A80949 /* FOXTutorialEvent.h in Headers */,
-				B807530C1D42203A00A80949 /* FOXLevelAchieveEvent.h in Headers */,
+				B807530C1D42203A00A80949 /* FOXAchieveLevelEvent.h in Headers */,
 				B80753181D42262700A80949 /* FOXPurchaseEvent.h in Headers */,
-				B80753101D42247A00A80949 /* FOXRegistration.h in Headers */,
+				B80753101D42247A00A80949 /* FOXRegistrationEvent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +145,9 @@
 			files = (
 				B81B88E81D46188400A62C59 /* FOXExtension.h in Headers */,
 				B81B88E91D4618B200A62C59 /* FOXTutorialEvent.h in Headers */,
-				B81B88EA1D4618B200A62C59 /* FOXLevelAchieveEvent.h in Headers */,
-				B81B88EB1D4618B200A62C59 /* FOXRegistration.h in Headers */,
-				B81B88EC1D4618B200A62C59 /* FOXStageAchieveEvent.h in Headers */,
+				B81B88EA1D4618B200A62C59 /* FOXAchieveLevelEvent.h in Headers */,
+				B81B88EB1D4618B200A62C59 /* FOXRegistrationEvent.h in Headers */,
+				B81B88EC1D4618B200A62C59 /* FOXAchieveStageEvent.h in Headers */,
 				B81B88ED1D4618B200A62C59 /* FOXPurchaseEvent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,10 +252,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B80753191D42262700A80949 /* FOXPurchaseEvent.m in Sources */,
-				B807530D1D42203A00A80949 /* FOXLevelAchieveEvent.m in Sources */,
-				B80753151D42252D00A80949 /* FOXStageAchieveEvent.m in Sources */,
+				B807530D1D42203A00A80949 /* FOXAchieveLevelEvent.m in Sources */,
+				B80753151D42252D00A80949 /* FOXAchieveStageEvent.m in Sources */,
 				B80753091D421F4B00A80949 /* FOXTutorialEvent.m in Sources */,
-				B80753111D42247A00A80949 /* FOXRegistration.m in Sources */,
+				B80753111D42247A00A80949 /* FOXRegistrationEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +469,7 @@
 				B81B88E71D46181400A62C59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
