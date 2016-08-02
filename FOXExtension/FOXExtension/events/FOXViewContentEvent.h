@@ -1,14 +1,17 @@
 //
-//  FOXTutorialEvent.h
+//  FOXViewContentEvent.h
 //  FOXExtension
 //
-//  Created by Wuwei on 2016/07/22.
+//  Created by 呉 維 on 2016/08/02.
 //  Copyright © 2016年 CyberZ. All rights reserved.
 //
 
 #import "FOXExtensionBaseEvent.h"
 
-@interface FOXTutorialEvent : FOXExtensionBaseEvent
+
+@interface FOXViewContentEvent : FOXExtensionBaseEvent
+
+@property (nonatomic, copy) NSString* _Nullable categoryId;
 
 /**
  * Create event with default eventName and no ltvId.
@@ -20,5 +23,7 @@
  * @param ltvId         LTV identifier given by FOX
  */
 -(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId;
+
+
 
 @end

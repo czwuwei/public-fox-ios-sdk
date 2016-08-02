@@ -10,72 +10,73 @@
 
 @implementation FOXPurchaseEvent
 
+-(instancetype) initWithTransaction:(SKPaymentTransaction *) transaction
+                            product:(SKProduct *) product {
+    return [self initWithLtvId:0 transaction:transaction product:product];
+}
 
--(instancetype)initWithEventName:(NSString *)eventName
-                        andLtvId:(NSUInteger)ltvId
-                     transaction:(SKPaymentTransaction *)transaction
-                         product:(SKProduct *)product {
+-(instancetype) initWithItemName:(NSString *) itemName
+                             sku:(NSString *) sku
+                          amount:(double) amount
+                        currency:(NSString *) currency {
+    return [self initWithLtvId:0 itemName:itemName sku:sku amount:amount currency:currency];
+}
+
+-(instancetype) initWithLtvId:(NSUInteger) ltvId
+                  transaction:(SKPaymentTransaction *) transaction
+                      product:(SKProduct *) product {
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     [formatter setLocale:product.priceLocale];
     NSString *currency = [formatter currencyCode];
 
-    self = [self initWithEventName:eventName
-                          andLtvId:ltvId
-                          itemName:product.localizedTitle
-                               sku:product.productIdentifier
-                             price:[product.price doubleValue]
-                          quantity:1
-                          currency:currency];
+    self = [self initWithLtvId:ltvId
+                      itemName:product.localizedTitle
+                           sku:product.productIdentifier
+                        amount:[product.price doubleValue]
+                      currency:currency];
     if (self) {
         self.orderId = transaction.transactionIdentifier;
     }
     return self;
 }
 
--(instancetype)initWithLtvId:(NSUInteger)ltvId
-                 transaction:(SKPaymentTransaction * _Nonnull)transaction
-                     product:(SKProduct * _Nonnull)product {
-    return [self initWithEventName:@"" andLtvId:ltvId transaction:transaction product:product];
-}
-
--(instancetype)initWithEventName:(NSString *)eventName
-                        andLtvId:(NSUInteger)ltvId
-                        itemName:(NSString * _Nullable)itemName
-                             sku:(NSString * _Nonnull)sku
-                           price:(double)price
-                        quantity:(NSInteger)quantity
-                        currency:(NSString * _Nullable)currency {
-    self = [super initWithEventName:@"FOX_purcase" andLtvId:ltvId];
+-(instancetype) initWithLtvId:(NSUInteger) ltvId
+                     itemName:(NSString * _Nullable) itemName
+                          sku:(NSString * _Nonnull) sku
+                       amount:(double) amount
+                     currency:(NSString * _Nullable) currency {
+    self = [super initWithEventName:@"_purcase" andLtvId:ltvId];
     if (self) {
         self.itemName = itemName;
-        self.price = price;
-        self.quantity = quantity;
+        self.price = amount;
+        self.quantity = 1;
         self.currency = currency;
     }
     return self;
 }
 
 
--(instancetype)initWithLtvId:(NSUInteger)ltvId
-                    itemName:(NSString *)itemName
-                         sku:(NSString *)sku
-                       price:(double)price
-                    quantity:(NSInteger)quantity
-                    currency:(NSString *)currency {
-    return [self initWithEventName:@"" andLtvId:ltvId itemName:itemName sku:sku price:price quantity:quantity currency:currency];
+-(void) setCategoryId:(NSString *) categoryId {
+    [self putJsonValue:categoryId forKey:@"category_id"];
 }
 
--(void)setUserId:(NSString *)userId {
-    if (userId && userId.length > 0) {
-        self.buid = userId;
-        if (self.eventInfo) {
-            NSMutableDictionary* dict = [NSMutableDictionary dictionaryWithDictionary:self.eventInfo];
-            [dict setObject:userId forKey:@"fox_user_id"];
-            self.eventInfo = dict;
-        } else {
-            self.eventInfo = @{ @"fox_user_id" : userId };
-        }
+-(void) setLocalizedTitle:(NSString *) localizedTitle {
+    [self putJsonValue:localizedTitle forKey:@"localized_title"];
+}
+
+-(void) setLocalizedDescription:(NSString *) localizedDescription {
+    [self putJsonValue:localizedDescription forKey:@"localized_description"];
+}
+
+-(void) setReceiptValid:(NSString *) receiptValid {
+    if (receiptValid) {
+        [self putJsonValue:@([receiptValid isEqualToString:kReceiptValidTrue]) forKey:@"receipt_valid"];
     }
 }
+
+-(void) setReceipt:(NSString *) receipt {
+    [self putJsonValue:receipt forKey:@"receipt"];
+}
+
 @end

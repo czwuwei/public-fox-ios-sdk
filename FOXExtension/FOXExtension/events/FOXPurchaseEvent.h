@@ -6,73 +6,64 @@
 //  Copyright © 2016年 CyberZ. All rights reserved.
 //
 
-#import <FOXSDK/FOXSDK.h>
+#import "FOXExtensionBaseEvent.h"
 #import <StoreKit/StoreKit.h>
 
-@interface FOXPurchaseEvent : FOXEvent
+#define kReceiptValidTrue @"true"
+#define kReceiptValidFalse @"false"
+
+@interface FOXPurchaseEvent : FOXExtensionBaseEvent
+
+@property (nonatomic, copy) NSString* _Nullable categoryId;
+
+@property (nonatomic, copy) NSString* _Nullable localizedTitle;
+@property (nonatomic, copy) NSString* _Nullable localizedDescription;
+@property (nonatomic, copy) NSString* _Nullable receiptValid;
+@property (nonatomic, copy) NSString* _Nullable receipt;
 
 /**
- * Create event for purchase with default eventName, specified ltvId and purchase detail.
+ * Create event with default eventName, no ltvId and purchase detail.
+
+ * @param transaction   StoreKit payment transaction
+ * @param product       StoreKit product detail
+ */
+-(instancetype _Nullable) initWithTransaction:(SKPaymentTransaction* _Nonnull) transaction
+                                      product:(SKProduct* _Nonnull) product;
+
+/**
+ * Create event with default eventName, specified ltvId and purchase detail.
  * @param ltvId         LTV identifier given by FOX
  * @param transaction   StoreKit payment transaction
  * @param product       StoreKit product detail
  */
--(instancetype _Nullable)initWithLtvId:(NSUInteger)ltvId
-                           transaction:(SKPaymentTransaction* _Nonnull) transaction
-                               product:(SKProduct* _Nonnull) product;
+-(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId
+                            transaction:(SKPaymentTransaction* _Nonnull) transaction
+                                product:(SKProduct* _Nonnull) product;
 
 /**
- * Create event for purchase with indicated eventName, specified ltvId and purchase detail.
- * @param eventName     Specified eventName
- * @param ltvId         LTV identifier given by FOX
- * @param transaction   StoreKit payment transaction
- * @param product       StoreKit product detail
- */
--(instancetype _Nullable)initWithEventName:(NSString * _Nonnull)eventName
-                                  andLtvId:(NSUInteger)ltvId
-                               transaction:(SKPaymentTransaction* _Nonnull) transaction
-                                   product:(SKProduct* _Nonnull) product;
-
-
-/**
- * Create event for purchase with default eventName, specified ltvId and purchase detail.
- * @param ltvId         LTV identifier given by FOX
+ * Create event with default eventName, no ltvId and purchase detail.
  * @param itemName      Name of item
  * @param sku           SKU
- * @param price         Price
- * @param quantity      Quantity
+ * @param amount        Amount
  * @param currency      Currency
  */
--(instancetype _Nullable)initWithLtvId:(NSUInteger)ltvId
-                              itemName:(NSString* _Nullable) itemName
-                                   sku:(NSString* _Nonnull) sku
-                                 price:(double) price
-                              quantity:(NSInteger) quantity
-                              currency:(NSString* _Nullable) currency;
-
-/**
- * Create event for purchase with indicated eventName, specified ltvId and purchase detail.
- * @param eventName     Specified eventName
- * @param ltvId         LTV identifier given by FOX
- * @param itemName      Name of item
- * @param sku           SKU
- * @param price         Price
- * @param quantity      Quantity
- * @param currency      Currency
- */
--(instancetype _Nullable)initWithEventName:(NSString * _Nonnull)eventName
-                                  andLtvId:(NSUInteger)ltvId
-                                  itemName:(NSString* _Nullable) itemName
+-(instancetype _Nullable) initWithItemName:(NSString* _Nullable) itemName
                                        sku:(NSString* _Nonnull) sku
-                                     price:(double) price
-                                  quantity:(NSInteger) quantity
+                                    amount:(double) amount
                                   currency:(NSString* _Nullable) currency;
 
 /**
- * Add user identifier for event.
- * @param userId        Specified user identifier
+ * Create event with default eventName, specified ltvId and purchase detail.
+ * @param ltvId         LTV identifier given by FOX
+ * @param itemName      Name of item
+ * @param sku           SKU
+ * @param amount        Amount
+ * @param currency      Currency
  */
--(void)setUserId:(NSString* _Nonnull) userId;
-
+-(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId
+                               itemName:(NSString* _Nullable) itemName
+                                    sku:(NSString* _Nonnull) sku
+                                 amount:(double) amount
+                               currency:(NSString* _Nullable) currency;
 
 @end
