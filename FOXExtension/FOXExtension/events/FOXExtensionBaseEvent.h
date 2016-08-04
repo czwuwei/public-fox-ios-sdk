@@ -11,6 +11,8 @@
 
 @interface FOXExtensionBaseEvent : FOXEvent
 
+@property (nonatomic, copy) NSString* _Nullable categoryId;
+
 @property (nonatomic, copy) NSString* _Nullable destination;
 @property (nonatomic, copy) NSString* _Nullable origin;
 @property (nonatomic, copy) NSDate* _Nullable dateIn;

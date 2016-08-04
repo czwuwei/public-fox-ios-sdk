@@ -21,6 +21,10 @@
     return self;
 }
 
+-(void) setCategoryId:(NSString *) categoryId {
+    [self putJsonValue:categoryId forKey:@"category_id"];
+}
+
 -(void) setDestination:(NSString *) destination {
     [self putJsonValue:destination forKey:@"destination"];
 }

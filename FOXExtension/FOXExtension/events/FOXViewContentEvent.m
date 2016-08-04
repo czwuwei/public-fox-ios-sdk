@@ -18,8 +18,8 @@
     return [super initWithEventName:@"_view_content" andLtvId:ltvId];
 }
 
--(void) setCategoryId:(NSString *) categoryId {
-    [self putJsonValue:categoryId forKey:@"category_id"];
+-(void) setItemId:(NSString *) itemId {
+    self.sku = itemId;
 }
 
 @end

@@ -18,8 +18,4 @@
     return [super initWithEventName:@"_add_to_cart" andLtvId:ltvId];
 }
 
--(void) setCategoryId:(NSString *) categoryId {
-    [self putJsonValue:categoryId forKey:@"category_id"];
-}
-
 @end

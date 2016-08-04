@@ -14,7 +14,7 @@
 
 @interface FOXPurchaseEvent : FOXExtensionBaseEvent
 
-@property (nonatomic, copy) NSString* _Nullable categoryId;
+@property (nonatomic, copy) NSString* _Nullable transactionId;
 
 @property (nonatomic, copy) NSString* _Nullable localizedTitle;
 @property (nonatomic, copy) NSString* _Nullable localizedDescription;

@@ -56,9 +56,8 @@
     return self;
 }
 
-
--(void) setCategoryId:(NSString *) categoryId {
-    [self putJsonValue:categoryId forKey:@"category_id"];
+-(void) setTransactionId:(NSString *) transactionId {
+    [self putJsonValue:transactionId forKey:@"transaction_id"];
 }
 
 -(void) setLocalizedTitle:(NSString *) localizedTitle {

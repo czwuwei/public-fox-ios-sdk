@@ -18,8 +18,4 @@
     return [super initWithEventName:@"_view_category" andLtvId:ltvId];
 }
 
--(void) setCategoryId:(NSString *) categoryId {
-    [self putJsonValue:categoryId forKey:@"category_id"];
-}
-
 @end

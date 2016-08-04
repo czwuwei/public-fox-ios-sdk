@@ -10,8 +10,6 @@
 
 @interface FOXAddToCartEvent : FOXExtensionBaseEvent
 
-@property (nonatomic, copy) NSString* _Nullable categoryId;
-
 /**
  * Create event with default eventName and no ltvId.
  */

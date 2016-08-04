@@ -11,7 +11,7 @@
 
 @interface FOXViewContentEvent : FOXExtensionBaseEvent
 
-@property (nonatomic, copy) NSString* _Nullable categoryId;
+@property (nonatomic, copy) NSString* _Nullable itemId;
 
 /**
  * Create event with default eventName and no ltvId.
