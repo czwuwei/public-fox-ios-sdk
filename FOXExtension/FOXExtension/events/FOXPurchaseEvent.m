@@ -56,26 +56,4 @@
     return self;
 }
 
--(void) setTransactionId:(NSString *) transactionId {
-    [self putJsonValue:transactionId forKey:@"transaction_id"];
-}
-
--(void) setLocalizedTitle:(NSString *) localizedTitle {
-    [self putJsonValue:localizedTitle forKey:@"localized_title"];
-}
-
--(void) setLocalizedDescription:(NSString *) localizedDescription {
-    [self putJsonValue:localizedDescription forKey:@"localized_description"];
-}
-
--(void) setReceiptValid:(NSString *) receiptValid {
-    if (receiptValid) {
-        [self putJsonValue:@([receiptValid isEqualToString:kReceiptValidTrue]) forKey:@"receipt_valid"];
-    }
-}
-
--(void) setReceipt:(NSString *) receipt {
-    [self putJsonValue:receipt forKey:@"receipt"];
-}
-
 @end

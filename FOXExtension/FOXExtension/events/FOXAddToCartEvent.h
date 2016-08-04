@@ -9,6 +9,13 @@
 #import "FOXExtensionBaseEvent.h"
 
 @interface FOXAddToCartEvent : FOXExtensionBaseEvent
+<
+FOXExFacebookEventDelegate,
+FOXExTwitterEventDelegate,
+FOXExVizuryEventDelegate,
+FOXExDynamicRemarketingEventDelegate,
+FOXExDynalystCommerceEventDelegate
+>
 
 /**
  * Create event with default eventName and no ltvId.

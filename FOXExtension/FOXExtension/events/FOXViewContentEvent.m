@@ -18,8 +18,4 @@
     return [super initWithEventName:@"_view_content" andLtvId:ltvId];
 }
 
--(void) setItemId:(NSString *) itemId {
-    self.sku = itemId;
-}
-
 @end

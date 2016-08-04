@@ -11,11 +11,7 @@
 @implementation FOXRegistrationEvent
 
 -(instancetype) initWithLtvId:(NSUInteger) ltvId {
-    return [super initWithEventName:@"FOX_registration" andLtvId:ltvId];
-}
-
--(instancetype) initWithEventName:(NSString *) eventName andLtvId:(NSUInteger) ltvId {
-    return [super initWithEventName:eventName andLtvId:ltvId];
+    return [super initWithEventName:@"fox_registration" andLtvId:ltvId];
 }
 
 @end

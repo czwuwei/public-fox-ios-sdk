@@ -9,8 +9,9 @@
 #import "FOXExtensionBaseEvent.h"
 
 @interface FOXSearchEvent : FOXExtensionBaseEvent
-
-@property (nonatomic, copy) NSString* _Nullable searchTerm;
+<
+FOXExDynamicRemarketingEventDelegate
+>
 
 /**
  * Create event with default eventName and no ltvId.

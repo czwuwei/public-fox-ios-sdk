@@ -6,9 +6,15 @@
 //  Copyright © 2016年 CyberZ. All rights reserved.
 //
 
-#import "FOXExtensionBaseEvent.h"
+#import <FOXSDK/FOXSDK.h>
+#import "FOXExtension.h"
 
-@interface FOXTutorialEvent : FOXExtensionBaseEvent
+@interface FOXTutorialEvent : FOXEvent
+<
+FOXExFacebookEventDelegate,
+FOXExTwitterEventDelegate,
+FOXExDynalystGamesEventDelegate
+>
 
 /**
  * Create event with default eventName and no ltvId.

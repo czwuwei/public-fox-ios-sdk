@@ -13,13 +13,15 @@
 #define kReceiptValidFalse @"false"
 
 @interface FOXPurchaseEvent : FOXExtensionBaseEvent
-
-@property (nonatomic, copy) NSString* _Nullable transactionId;
-
-@property (nonatomic, copy) NSString* _Nullable localizedTitle;
-@property (nonatomic, copy) NSString* _Nullable localizedDescription;
-@property (nonatomic, copy) NSString* _Nullable receiptValid;
-@property (nonatomic, copy) NSString* _Nullable receipt;
+<
+FOXExFacebookEventDelegate,
+FOXExTwitterEventDelegate,
+FOXExVizuryEventDelegate,
+FOXExDynamicRemarketingEventDelegate,
+FOXExDynalystCommerceEventDelegate,
+FOXExDynalystGamesEventDelegate,
+FOXExChartBoostEventDelegate
+>
 
 /**
  * Create event with default eventName, no ltvId and purchase detail.

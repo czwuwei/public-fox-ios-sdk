@@ -7,18 +7,9 @@
 //
 
 #import <FOXSDK/FOXSDK.h>
-#import "FOXProductInfo.h"
+#import "FOXExtensionProtocols.h"
 
 @interface FOXExtensionBaseEvent : FOXEvent
-
-@property (nonatomic, copy) NSString* _Nullable categoryId;
-
-@property (nonatomic, copy) NSString* _Nullable destination;
-@property (nonatomic, copy) NSString* _Nullable origin;
-@property (nonatomic, copy) NSDate* _Nullable dateIn;
-@property (nonatomic, copy) NSDate* _Nullable dateOut;
-
-@property (nonatomic, copy) NSArray<FOXProductInfo*>* _Nullable productIdList;
 
 /**
  * Add user identifier for event.

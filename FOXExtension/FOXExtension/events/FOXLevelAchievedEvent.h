@@ -20,6 +20,11 @@
 @end
 
 @interface FOXLevelAchievedEvent : FOXExtensionBaseEvent
+<
+FOXExFacebookEventDelegate,
+FOXExTwitterEventDelegate,
+FOXExChartBoostEventDelegate
+>
 
 @property (nonatomic, copy) NSArray<FOXLevelInfo*>* _Nullable trackInfoList;
 

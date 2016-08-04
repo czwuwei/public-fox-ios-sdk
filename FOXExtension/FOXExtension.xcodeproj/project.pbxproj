@@ -44,10 +44,6 @@
 		B89642161D5084D800121044 /* FOXViewContentEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B89642131D5084D800121044 /* FOXViewContentEvent.h */; };
 		B89642171D5084D800121044 /* FOXViewContentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B89642141D5084D800121044 /* FOXViewContentEvent.m */; };
 		B89642181D5084D800121044 /* FOXViewContentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B89642141D5084D800121044 /* FOXViewContentEvent.m */; };
-		B89642231D50888800121044 /* FOXProductInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B89642211D50888800121044 /* FOXProductInfo.h */; };
-		B89642241D50888800121044 /* FOXProductInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B89642211D50888800121044 /* FOXProductInfo.h */; };
-		B89642251D50888800121044 /* FOXProductInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B89642221D50888800121044 /* FOXProductInfo.m */; };
-		B89642261D50888800121044 /* FOXProductInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B89642221D50888800121044 /* FOXProductInfo.m */; };
 		B89642291D50A13C00121044 /* FOXAddToCartEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B89642271D50A13C00121044 /* FOXAddToCartEvent.h */; };
 		B896422A1D50A13C00121044 /* FOXAddToCartEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B89642271D50A13C00121044 /* FOXAddToCartEvent.h */; };
 		B896422B1D50A13C00121044 /* FOXAddToCartEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B89642281D50A13C00121044 /* FOXAddToCartEvent.m */; };
@@ -79,6 +75,7 @@
 		B83DB7C51D45DCA500B301CB /* CYZAdCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZAdCommon.framework; path = Carthage/Build/iOS/CYZAdCommon.framework; sourceTree = "<group>"; };
 		B83DB7C61D45DCA500B301CB /* CYZUtil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZUtil.framework; path = Carthage/Build/iOS/CYZUtil.framework; sourceTree = "<group>"; };
 		B83DB7C71D45DCA500B301CB /* FOXSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FOXSDK.framework; path = Carthage/Build/iOS/FOXSDK.framework; sourceTree = "<group>"; };
+		B894B9E11D5340B0003E4482 /* FOXExtensionProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOXExtensionProtocols.h; sourceTree = "<group>"; };
 		B89641EE1D50844300121044 /* FOXLevelAchievedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXLevelAchievedEvent.h; sourceTree = "<group>"; };
 		B89641EF1D50844300121044 /* FOXLevelAchievedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXLevelAchievedEvent.m; sourceTree = "<group>"; };
 		B89641F01D50844300121044 /* FOXAchieveStageEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXAchieveStageEvent.h; sourceTree = "<group>"; };
@@ -93,8 +90,6 @@
 		B89641F91D50844300121044 /* FOXTutorialEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXTutorialEvent.m; sourceTree = "<group>"; };
 		B89642131D5084D800121044 /* FOXViewContentEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXViewContentEvent.h; sourceTree = "<group>"; };
 		B89642141D5084D800121044 /* FOXViewContentEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXViewContentEvent.m; sourceTree = "<group>"; };
-		B89642211D50888800121044 /* FOXProductInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXProductInfo.h; sourceTree = "<group>"; };
-		B89642221D50888800121044 /* FOXProductInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXProductInfo.m; sourceTree = "<group>"; };
 		B89642271D50A13C00121044 /* FOXAddToCartEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXAddToCartEvent.h; sourceTree = "<group>"; };
 		B89642281D50A13C00121044 /* FOXAddToCartEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXAddToCartEvent.m; sourceTree = "<group>"; };
 		B896422D1D50B8CE00121044 /* FOXViewToppageEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXViewToppageEvent.h; sourceTree = "<group>"; };
@@ -153,20 +148,21 @@
 		B80752E71D421E6D00A80949 /* FOXExtension */ = {
 			isa = PBXGroup;
 			children = (
-				B80752F01D421EA400A80949 /* events */,
+				B80752F01D421EA400A80949 /* Events */,
 				B80752E81D421E6D00A80949 /* FOXExtension.h */,
 				B80752E91D421E6D00A80949 /* Info.plist */,
 			);
 			path = FOXExtension;
 			sourceTree = "<group>";
 		};
-		B80752F01D421EA400A80949 /* events */ = {
+		B80752F01D421EA400A80949 /* Events */ = {
 			isa = PBXGroup;
 			children = (
 				B896421A1D50866300121044 /* cooperation */,
-				B89642191D50864900121044 /* collect */,
+				B89642191D50864900121044 /* fox */,
 				B89642121D50845D00121044 /* base */,
 			);
+			name = Events;
 			path = events;
 			sourceTree = "<group>";
 		};
@@ -184,15 +180,14 @@
 		B89642121D50845D00121044 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				B894B9E11D5340B0003E4482 /* FOXExtensionProtocols.h */,
 				B89641F21D50844300121044 /* FOXExtensionBaseEvent.h */,
 				B89641F31D50844300121044 /* FOXExtensionBaseEvent.m */,
-				B89642211D50888800121044 /* FOXProductInfo.h */,
-				B89642221D50888800121044 /* FOXProductInfo.m */,
 			);
 			name = base;
 			sourceTree = "<group>";
 		};
-		B89642191D50864900121044 /* collect */ = {
+		B89642191D50864900121044 /* fox */ = {
 			isa = PBXGroup;
 			children = (
 				B89641F01D50844300121044 /* FOXAchieveStageEvent.h */,
@@ -200,7 +195,7 @@
 				B89641F61D50844300121044 /* FOXRegistrationEvent.h */,
 				B89641F71D50844300121044 /* FOXRegistrationEvent.m */,
 			);
-			name = collect;
+			name = fox;
 			sourceTree = "<group>";
 		};
 		B896421A1D50866300121044 /* cooperation */ = {
@@ -238,7 +233,6 @@
 				B89642151D5084D800121044 /* FOXViewContentEvent.h in Headers */,
 				B89642061D50844300121044 /* FOXPurchaseEvent.h in Headers */,
 				B89642021D50844300121044 /* FOXExtensionBaseEvent.h in Headers */,
-				B89642231D50888800121044 /* FOXProductInfo.h in Headers */,
 				B89641FA1D50844300121044 /* FOXLevelAchievedEvent.h in Headers */,
 				B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */,
 				B89642291D50A13C00121044 /* FOXAddToCartEvent.h in Headers */,
@@ -259,7 +253,6 @@
 				B89642161D5084D800121044 /* FOXViewContentEvent.h in Headers */,
 				B89642071D50844300121044 /* FOXPurchaseEvent.h in Headers */,
 				B89642031D50844300121044 /* FOXExtensionBaseEvent.h in Headers */,
-				B89642241D50888800121044 /* FOXProductInfo.h in Headers */,
 				B89641FB1D50844300121044 /* FOXLevelAchievedEvent.h in Headers */,
 				B81B88E81D46188400A62C59 /* FOXExtension.h in Headers */,
 				B896422A1D50A13C00121044 /* FOXAddToCartEvent.h in Headers */,
@@ -379,7 +372,6 @@
 				B89642371D50B8F900121044 /* FOXViewCategoryEvent.m in Sources */,
 				B89642431D50B9B000121044 /* FOXSearchEvent.m in Sources */,
 				B89642041D50844300121044 /* FOXExtensionBaseEvent.m in Sources */,
-				B89642251D50888800121044 /* FOXProductInfo.m in Sources */,
 				B896420C1D50844300121044 /* FOXRegistrationEvent.m in Sources */,
 				B896423D1D50B97800121044 /* FOXViewListingEvent.m in Sources */,
 				B896422B1D50A13C00121044 /* FOXAddToCartEvent.m in Sources */,
@@ -399,7 +391,6 @@
 				B89642381D50B8F900121044 /* FOXViewCategoryEvent.m in Sources */,
 				B89642441D50B9B000121044 /* FOXSearchEvent.m in Sources */,
 				B89642051D50844300121044 /* FOXExtensionBaseEvent.m in Sources */,
-				B89642261D50888800121044 /* FOXProductInfo.m in Sources */,
 				B896420D1D50844300121044 /* FOXRegistrationEvent.m in Sources */,
 				B896423E1D50B97800121044 /* FOXViewListingEvent.m in Sources */,
 				B896422C1D50A13C00121044 /* FOXAddToCartEvent.m in Sources */,

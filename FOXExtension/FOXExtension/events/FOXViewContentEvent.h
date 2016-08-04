@@ -8,10 +8,14 @@
 
 #import "FOXExtensionBaseEvent.h"
 
-
 @interface FOXViewContentEvent : FOXExtensionBaseEvent
-
-@property (nonatomic, copy) NSString* _Nullable itemId;
+<
+FOXExFacebookEventDelegate,
+FOXExTwitterEventDelegate,
+FOXExVizuryEventDelegate,
+FOXExDynamicRemarketingEventDelegate,
+FOXExDynalystCommerceEventDelegate
+>
 
 /**
  * Create event with default eventName and no ltvId.

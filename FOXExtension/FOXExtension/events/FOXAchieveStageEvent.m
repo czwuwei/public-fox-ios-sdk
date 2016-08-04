@@ -10,12 +10,8 @@
 
 @implementation FOXAchieveStageEvent
 
--(instancetype) initWithEventName:(NSString *) eventName andLtvId:(NSUInteger) ltvId {
-    return [super initWithEventName:eventName andLtvId:ltvId];
-}
-
 -(instancetype) initWithLtvId:(NSUInteger) ltvId {
-    return [super initWithEventName:@"FOX_stage" andLtvId:ltvId];
+    return [super initWithEventName:@"fox_achieved_stage" andLtvId:ltvId];
 }
 
 -(void) setStage:(NSString *) stage {

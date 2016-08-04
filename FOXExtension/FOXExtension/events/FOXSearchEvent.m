@@ -18,8 +18,4 @@
     return [super initWithEventName:@"_search" andLtvId:ltvId];
 }
 
--(void) setSearchTerm:(NSString *) searchTerm {
-    [self putJsonValue:searchTerm forKey:@"search_term"];
-}
-
 @end

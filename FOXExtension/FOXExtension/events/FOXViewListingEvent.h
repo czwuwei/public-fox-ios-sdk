@@ -9,6 +9,10 @@
 #import "FOXExtensionBaseEvent.h"
 
 @interface FOXViewListingEvent : FOXExtensionBaseEvent
+<
+FOXExDynamicRemarketingEventDelegate,
+FOXExDynalystCommerceEventDelegate
+>
 
 /**
  * Create event with default eventName and no ltvId.

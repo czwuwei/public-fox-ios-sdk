@@ -9,6 +9,9 @@
 #import "FOXExtensionBaseEvent.h"
 
 @interface FOXViewToppageEvent : FOXExtensionBaseEvent
+<
+FOXExVizuryEventDelegate
+>
 
 /**
  * Create event with default eventName and no ltvId.

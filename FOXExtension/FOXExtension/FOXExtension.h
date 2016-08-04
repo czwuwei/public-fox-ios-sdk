@@ -22,3 +22,4 @@ FOUNDATION_EXPORT const unsigned char FOXExtensionVersionString[];
 #import "FOXLevelAchievedEvent.h"
 #import "FOXAchieveStageEvent.h"
 #import "FOXPurchaseEvent.h"
+#import "FOXViewContentEvent.h"

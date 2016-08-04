@@ -10,6 +10,19 @@
 
 #define kDateFormat @"yyyy-MM-dd"
 
+@interface FOXExtensionBaseEvent ()
+<
+FOXExFacebookEventDelegate,
+FOXExTwitterEventDelegate,
+FOXExVizuryEventDelegate,
+FOXExDynamicRemarketingEventDelegate,
+FOXExDynalystGamesEventDelegate,
+FOXExDynalystCommerceEventDelegate,
+FOXExChartBoostEventDelegate
+>
+
+@end
+
 @implementation FOXExtensionBaseEvent
 
 -(instancetype) initWithEventName:(NSString *) eventName andLtvId:(NSUInteger) ltvId
@@ -21,8 +34,35 @@
     return self;
 }
 
+#pragma mark - Common
+-(void) setUserId:(NSString *) userId {
+    if (userId && userId.length > 0) {
+        self.buid = userId;
+        [self putJsonValue:userId forKey:@"user_id"];
+    }
+}
+
+#pragma mark - Facebook, Twitter
+-(void) setItemId:(NSString *) itemId {
+    if (itemId) {
+        self.sku = itemId;
+        [self addExtraValue:itemId forKey:@"itemId"];
+    }
+}
+
+#pragma mark - Vizury
 -(void) setCategoryId:(NSString *) categoryId {
     [self putJsonValue:categoryId forKey:@"category_id"];
+}
+
+
+#pragma mark - DynamicRemarketing
++(void) setGoogleCrmId:(NSString *) crmId {
+    if (crmId) {
+        NSMutableDictionary* userInfo = [NSMutableDictionary dictionaryWithDictionary:[FOXTrack getUserInfo]];
+        [userInfo setObject:crmId forKey:@"_google_crm_id"];
+        [FOXTrack setUserInfo:userInfo];
+    }
 }
 
 -(void) setDestination:(NSString *) destination {
@@ -43,40 +83,93 @@
     [self putJsonValue:dout forKey:@"dout"];
 }
 
+-(void) addProductById:(NSString *) productId itemLocationId:(NSString *) itemLocationId {
+    if (productId) {
+        NSMutableArray* productList = [self.eventInfo objectForKey:@"product"];
 
--(void) setProductIdList:(NSArray<FOXProductInfo *> *) productIdList {
-    NSMutableArray* productJsonArray = [NSMutableArray array];
-    for (FOXProductInfo* product in productIdList) {
-        NSMutableDictionary* productJson = [NSMutableDictionary dictionary];
-
-        if (product.id) {
-            [productJson setValue:product.id forKey:@"id"];
-        }
-        if (product.itemLocationId) {
-            [productJson setValue:product.itemLocationId forKey:@"item_location_id"];
+        if (!productList) {
+            productList = [NSMutableArray array];
         }
 
-        if (product.price > 0) {
-            [productJson setValue:@(product.price) forKey:@"price"];
+        NSMutableDictionary* product = [NSMutableDictionary dictionary];
+        [product setValue:productId forKey:@"id"];
+
+        if (itemLocationId) {
+            [product setValue:itemLocationId forKey:@"item_location_id"];
         }
 
-        if (product.quantity > 0) {
-            [productJson setValue:@(product.quantity) forKey:@"quantity"];
-        }
-
-        [productJsonArray addObject:productJson];
-    }
-
-    [self putJsonValue:productJsonArray forKey:@"product"];
-}
-
--(void) setUserId:(NSString *) userId {
-    if (userId && userId.length > 0) {
-        self.buid = userId;
-        [self putJsonValue:userId forKey:@"fox_user_id"];
+        [productList addObject:product];
     }
 }
 
+#pragma mark - DynalystGames
++(void) setDynalystGuid:(NSString *) guid {
+    if (guid) {
+        NSMutableDictionary* userInfo = [NSMutableDictionary dictionaryWithDictionary:[FOXTrack getUserInfo]];
+        [userInfo setObject:guid forKey:@"guid"];
+        [FOXTrack setUserInfo:userInfo];
+    }
+}
+
++(void) setDynalystAdnt:(NSString *) adnt {
+    if (adnt) {
+        NSMutableDictionary* userInfo = [NSMutableDictionary dictionaryWithDictionary:[FOXTrack getUserInfo]];
+        [userInfo setObject:adnt forKey:@"adnt"];
+        [FOXTrack setUserInfo:userInfo];
+    }
+}
+
++(void) setDynalystExt:(NSDictionary *) extJson {
+    if (extJson) {
+        NSMutableDictionary* userInfo = [NSMutableDictionary dictionaryWithDictionary:[FOXTrack getUserInfo]];
+        [userInfo setObject:extJson forKey:@"ext"];
+        [FOXTrack setUserInfo:userInfo];
+    }
+}
+
+-(void) setDynalystAdVertiserId:(NSString *) advertiserId {
+    [self putJsonValue:advertiserId forKey:@"dynalyst_advertiser_id"];
+}
+
+#pragma mark - DynalystCommerce
+-(void) setTransactionId:(NSString *) transactionId {
+    [self putJsonValue:transactionId forKey:@"transcation_id"];
+}
+
+-(void) addProductById:(NSString *) productId price:(double) price quantity:(NSUInteger) quantity {
+    if (productId) {
+        NSMutableArray* productList = [self.eventInfo objectForKey:@"product"];
+
+        if (!productList) {
+            productList = [NSMutableArray array];
+        }
+
+        [productList addObject:@{
+                                 @"id" : productId,
+                                 @"price" : @(price),
+                                 @"quantity" : @(quantity)
+                                 }];
+    }
+}
+
+#pragma mark - ChartBoost
+-(void) setLocalizedTitle:(NSString *) localizedTitle {
+    [self putJsonValue:localizedTitle forKey:@"localized_title"];
+}
+
+-(void) setLocalizedDescription:(NSString *) localizedDescription {
+    [self putJsonValue:localizedDescription forKey:@"localized_description"];
+}
+
+-(void) setReciptValid:(BOOL) isValid {
+    [self putJsonValue:@(isValid) forKey:@"receipt_valid"];
+}
+
+-(void) setRecipt:(NSString *) receipt {
+    [self putJsonValue:receipt forKey:@"receipt"];
+}
+
+#pragma mark - override
 -(void) setEventInfo:(NSDictionary *) eventInfo {
     if (eventInfo) {
         NSMutableDictionary* json = (NSMutableDictionary*)self.eventInfo;
@@ -84,6 +177,7 @@
     }
 }
 
+#pragma mark - private
 -(void) putJsonValue:(id) value forKey:(NSString*) key {
     if (key && value) {
         NSMutableDictionary* json = (NSMutableDictionary*)self.eventInfo;
