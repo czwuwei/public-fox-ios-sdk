@@ -46,12 +46,13 @@ FOXExChartBoostEventDelegate
  * Create event with default eventName, no ltvId and purchase detail.
  * @param itemName      Name of item
  * @param sku           SKU
- * @param amount        Amount
+ * @param price         Price
  * @param currency      Currency
  */
 -(instancetype _Nullable) initWithItemName:(NSString* _Nullable) itemName
                                        sku:(NSString* _Nonnull) sku
-                                    amount:(double) amount
+                                     price:(double) price
+                                  quantity:(NSUInteger) quantity
                                   currency:(NSString* _Nullable) currency;
 
 /**
@@ -59,13 +60,14 @@ FOXExChartBoostEventDelegate
  * @param ltvId         LTV identifier given by FOX
  * @param itemName      Name of item
  * @param sku           SKU
- * @param amount        Amount
+ * @param price         Price
  * @param currency      Currency
  */
 -(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId
                                itemName:(NSString* _Nullable) itemName
                                     sku:(NSString* _Nonnull) sku
-                                 amount:(double) amount
+                                  price:(double) price
+                               quantity:(NSUInteger) quantity
                                currency:(NSString* _Nullable) currency;
 
 @end

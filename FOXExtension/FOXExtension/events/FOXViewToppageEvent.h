@@ -2,7 +2,7 @@
 //  FOXViewToppageEvent.h
 //  FOXExtension
 //
-//  Created by 呉 維 on 2016/08/02.
+//  Created by Wuwei on 2016/08/02.
 //  Copyright © 2016年 CyberZ. All rights reserved.
 //
 

@@ -17,9 +17,10 @@
 
 -(instancetype) initWithItemName:(NSString *) itemName
                              sku:(NSString *) sku
-                          amount:(double) amount
+                           price:(double) price
+                        quantity:(NSUInteger) quantity
                         currency:(NSString *) currency {
-    return [self initWithLtvId:0 itemName:itemName sku:sku amount:amount currency:currency];
+    return [self initWithLtvId:0 itemName:itemName sku:sku price:price quantity:quantity currency:currency];
 }
 
 -(instancetype) initWithLtvId:(NSUInteger) ltvId
@@ -33,7 +34,8 @@
     self = [self initWithLtvId:ltvId
                       itemName:product.localizedTitle
                            sku:product.productIdentifier
-                        amount:[product.price doubleValue]
+                         price:[product.price doubleValue]
+                      quantity:1
                       currency:currency];
     if (self) {
         self.orderId = transaction.transactionIdentifier;
@@ -44,13 +46,14 @@
 -(instancetype) initWithLtvId:(NSUInteger) ltvId
                      itemName:(NSString * _Nullable) itemName
                           sku:(NSString * _Nonnull) sku
-                       amount:(double) amount
+                        price:(double) price
+                     quantity:(NSUInteger) quantity
                      currency:(NSString * _Nullable) currency {
     self = [super initWithEventName:@"_purcase" andLtvId:ltvId];
     if (self) {
         self.itemName = itemName;
-        self.price = amount;
-        self.quantity = 1;
+        self.price = price;
+        self.quantity = quantity;
         self.currency = currency;
     }
     return self;

@@ -2,7 +2,7 @@
 //  CooperationProtocols.h
 //  FOXExtension
 //
-//  Created by 呉 維 on 2016/08/04.
+//  Created by Wuwei on 2016/08/04.
 //  Copyright © 2016年 CyberZ. All rights reserved.
 //
 #pragma mark - Facebook
@@ -28,7 +28,10 @@
 
 @optional
 -(void) setCategoryId:(NSString* _Nonnull) categoryId;
--(void) addProductById:(NSString* _Nonnull) productId;
+-(void) addProductById:(NSString* _Nonnull) productId
+        itemLocationId:(NSString* _Nullable) itemLocationId
+                 price:(double) price
+              quantity:(NSUInteger) quantity;
 
 @end
 
@@ -42,7 +45,10 @@
 -(void) setOrigin:(NSString* _Nonnull) origin;
 -(void) setDin:(NSString* _Nonnull) din;
 -(void) setDout:(NSString* _Nonnull) dout;
--(void) addProductById:(NSString* _Nonnull) productId itemLocationId:(NSString* _Nonnull) itemLocationId;
+-(void) addProductById:(NSString* _Nonnull) productId
+        itemLocationId:(NSString* _Nullable) itemLocationId
+                 price:(double) price
+              quantity:(NSUInteger) quantity;
 -(void) setSearchTerm:(NSString* _Nonnull) searchTerm;
 
 +(void) setGoogleCrmId:(NSString* _Nonnull) crmId;
@@ -70,9 +76,10 @@
 
 @optional
 -(void) setTransactionId:(NSString* _Nonnull) transactionId;
--(void) addProductById:(NSString* _Nonnull) productId;
--(void) addProductById:(NSString* _Nonnull) productId price:(double) price quantity:(NSUInteger) quantity;
-
+-(void) addProductById:(NSString* _Nonnull) productId
+        itemLocationId:(NSString* _Nullable) itemLocationId
+                 price:(double) price
+              quantity:(NSUInteger) quantity;
 @end
 
 

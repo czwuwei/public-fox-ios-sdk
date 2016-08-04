@@ -2,7 +2,7 @@
 //  FOXExtensionBaseEvent.m
 //  FOXExtension
 //
-//  Created by 呉 維 on 2016/08/02.
+//  Created by Wuwei on 2016/08/02.
 //  Copyright © 2016年 CyberZ. All rights reserved.
 //
 
@@ -39,6 +39,31 @@ FOXExChartBoostEventDelegate
     if (userId && userId.length > 0) {
         self.buid = userId;
         [self putJsonValue:userId forKey:@"user_id"];
+    }
+}
+
+-(void) addProductById:(NSString *) productId itemLocationId:(NSString *) itemLocationId price:(double) price quantity:(NSUInteger) quantity {
+    if (productId) {
+        NSMutableArray* productList = [self.eventInfo objectForKey:@"product"];
+
+        if (!productList) {
+            productList = [NSMutableArray array];
+        }
+
+        NSMutableDictionary* product = [NSMutableDictionary dictionary];
+        [product setValue:productId forKey:@"id"];
+
+        if (itemLocationId) {
+            [product setValue:itemLocationId forKey:@"item_location_id"];
+        }
+        if (price > 0) {
+            [product setValue:@(price) forKey:@"price"];
+        }
+        if (quantity > 0) {
+            [product setValue:@(quantity) forKey:@"quantity"];
+        }
+
+        [productList addObject:product];
     }
 }
 
@@ -83,25 +108,6 @@ FOXExChartBoostEventDelegate
     [self putJsonValue:dout forKey:@"dout"];
 }
 
--(void) addProductById:(NSString *) productId itemLocationId:(NSString *) itemLocationId {
-    if (productId) {
-        NSMutableArray* productList = [self.eventInfo objectForKey:@"product"];
-
-        if (!productList) {
-            productList = [NSMutableArray array];
-        }
-
-        NSMutableDictionary* product = [NSMutableDictionary dictionary];
-        [product setValue:productId forKey:@"id"];
-
-        if (itemLocationId) {
-            [product setValue:itemLocationId forKey:@"item_location_id"];
-        }
-
-        [productList addObject:product];
-    }
-}
-
 #pragma mark - DynalystGames
 +(void) setDynalystGuid:(NSString *) guid {
     if (guid) {
@@ -136,21 +142,6 @@ FOXExChartBoostEventDelegate
     [self putJsonValue:transactionId forKey:@"transcation_id"];
 }
 
--(void) addProductById:(NSString *) productId price:(double) price quantity:(NSUInteger) quantity {
-    if (productId) {
-        NSMutableArray* productList = [self.eventInfo objectForKey:@"product"];
-
-        if (!productList) {
-            productList = [NSMutableArray array];
-        }
-
-        [productList addObject:@{
-                                 @"id" : productId,
-                                 @"price" : @(price),
-                                 @"quantity" : @(quantity)
-                                 }];
-    }
-}
 
 #pragma mark - ChartBoost
 -(void) setLocalizedTitle:(NSString *) localizedTitle {
