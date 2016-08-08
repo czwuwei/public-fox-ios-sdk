@@ -17,9 +17,12 @@ FOUNDATION_EXPORT const unsigned char FOXExtensionVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <FOXExtension/PublicHeader.h>
 
 
-#import "FOXTutorialEvent.h"
-#import "FOXRegistrationEvent.h"
+#import "FOXAddToCartEvent.h"
 #import "FOXLevelAchievedEvent.h"
-#import "FOXAchieveStageEvent.h"
 #import "FOXPurchaseEvent.h"
+#import "FOXSearchEvent.h"
+#import "FOXTutorialEvent.h"
+#import "FOXViewCategoryEvent.h"
 #import "FOXViewContentEvent.h"
+#import "FOXViewListingEvent.h"
+#import "FOXViewToppageEvent.h"

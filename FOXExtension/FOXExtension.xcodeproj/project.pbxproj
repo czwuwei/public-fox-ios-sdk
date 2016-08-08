@@ -8,54 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B807531C1D4227C200A80949 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B807531B1D4227C200A80949 /* StoreKit.framework */; };
 		B80E3D6A1D50732C00677EF3 /* CYZAdCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C51D45DCA500B301CB /* CYZAdCommon.framework */; };
 		B80E3D6B1D50732C00677EF3 /* CYZUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C61D45DCA500B301CB /* CYZUtil.framework */; };
 		B80E3D6C1D50732C00677EF3 /* FOXSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C71D45DCA500B301CB /* FOXSDK.framework */; };
-		B80E3D6D1D50734100677EF3 /* CYZAdCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C51D45DCA500B301CB /* CYZAdCommon.framework */; };
-		B80E3D6E1D50734200677EF3 /* CYZUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C61D45DCA500B301CB /* CYZUtil.framework */; };
-		B80E3D6F1D50734200677EF3 /* FOXSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C71D45DCA500B301CB /* FOXSDK.framework */; };
 		B81B88E81D46188400A62C59 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B86FA1031D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; };
-		B86FA1041D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; };
+		B86FA1031D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA1041D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1051D586D3100CAF4AF /* FOXExtensionBaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */; };
 		B86FA1061D586D3100CAF4AF /* FOXExtensionBaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */; };
-		B86FA1071D586D3100CAF4AF /* FOXExtensionProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */; };
-		B86FA1081D586D3100CAF4AF /* FOXExtensionProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */; };
-		B86FA1091D586D3100CAF4AF /* FOXAddToCartEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F11D586D3100CAF4AF /* FOXAddToCartEvent.h */; };
-		B86FA10A1D586D3100CAF4AF /* FOXAddToCartEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F11D586D3100CAF4AF /* FOXAddToCartEvent.h */; };
+		B86FA1071D586D3100CAF4AF /* FOXExtensionProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA1081D586D3100CAF4AF /* FOXExtensionProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA1091D586D3100CAF4AF /* FOXAddToCartEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F11D586D3100CAF4AF /* FOXAddToCartEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA10A1D586D3100CAF4AF /* FOXAddToCartEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F11D586D3100CAF4AF /* FOXAddToCartEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA10B1D586D3100CAF4AF /* FOXAddToCartEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F21D586D3100CAF4AF /* FOXAddToCartEvent.m */; };
 		B86FA10C1D586D3100CAF4AF /* FOXAddToCartEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F21D586D3100CAF4AF /* FOXAddToCartEvent.m */; };
-		B86FA10D1D586D3100CAF4AF /* FOXLevelAchievedEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F31D586D3100CAF4AF /* FOXLevelAchievedEvent.h */; };
-		B86FA10E1D586D3100CAF4AF /* FOXLevelAchievedEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F31D586D3100CAF4AF /* FOXLevelAchievedEvent.h */; };
+		B86FA10D1D586D3100CAF4AF /* FOXLevelAchievedEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F31D586D3100CAF4AF /* FOXLevelAchievedEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA10E1D586D3100CAF4AF /* FOXLevelAchievedEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F31D586D3100CAF4AF /* FOXLevelAchievedEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA10F1D586D3100CAF4AF /* FOXLevelAchievedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F41D586D3100CAF4AF /* FOXLevelAchievedEvent.m */; };
 		B86FA1101D586D3100CAF4AF /* FOXLevelAchievedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F41D586D3100CAF4AF /* FOXLevelAchievedEvent.m */; };
-		B86FA1111D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F51D586D3100CAF4AF /* FOXPurchaseEvent.h */; };
-		B86FA1121D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F51D586D3100CAF4AF /* FOXPurchaseEvent.h */; };
+		B86FA1111D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F51D586D3100CAF4AF /* FOXPurchaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA1121D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F51D586D3100CAF4AF /* FOXPurchaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1131D586D3100CAF4AF /* FOXPurchaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F61D586D3100CAF4AF /* FOXPurchaseEvent.m */; };
 		B86FA1141D586D3100CAF4AF /* FOXPurchaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F61D586D3100CAF4AF /* FOXPurchaseEvent.m */; };
-		B86FA1151D586D3100CAF4AF /* FOXSearchEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F71D586D3100CAF4AF /* FOXSearchEvent.h */; };
-		B86FA1161D586D3100CAF4AF /* FOXSearchEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F71D586D3100CAF4AF /* FOXSearchEvent.h */; };
+		B86FA1151D586D3100CAF4AF /* FOXSearchEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F71D586D3100CAF4AF /* FOXSearchEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA1161D586D3100CAF4AF /* FOXSearchEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F71D586D3100CAF4AF /* FOXSearchEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1171D586D3100CAF4AF /* FOXSearchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F81D586D3100CAF4AF /* FOXSearchEvent.m */; };
 		B86FA1181D586D3100CAF4AF /* FOXSearchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0F81D586D3100CAF4AF /* FOXSearchEvent.m */; };
-		B86FA1191D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F91D586D3100CAF4AF /* FOXTutorialEvent.h */; };
-		B86FA11A1D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F91D586D3100CAF4AF /* FOXTutorialEvent.h */; };
+		B86FA1191D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F91D586D3100CAF4AF /* FOXTutorialEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA11A1D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0F91D586D3100CAF4AF /* FOXTutorialEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA11B1D586D3100CAF4AF /* FOXTutorialEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0FA1D586D3100CAF4AF /* FOXTutorialEvent.m */; };
 		B86FA11C1D586D3100CAF4AF /* FOXTutorialEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0FA1D586D3100CAF4AF /* FOXTutorialEvent.m */; };
-		B86FA11D1D586D3100CAF4AF /* FOXViewCategoryEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FB1D586D3100CAF4AF /* FOXViewCategoryEvent.h */; };
-		B86FA11E1D586D3100CAF4AF /* FOXViewCategoryEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FB1D586D3100CAF4AF /* FOXViewCategoryEvent.h */; };
+		B86FA11D1D586D3100CAF4AF /* FOXViewCategoryEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FB1D586D3100CAF4AF /* FOXViewCategoryEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA11E1D586D3100CAF4AF /* FOXViewCategoryEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FB1D586D3100CAF4AF /* FOXViewCategoryEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA11F1D586D3100CAF4AF /* FOXViewCategoryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0FC1D586D3100CAF4AF /* FOXViewCategoryEvent.m */; };
 		B86FA1201D586D3100CAF4AF /* FOXViewCategoryEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0FC1D586D3100CAF4AF /* FOXViewCategoryEvent.m */; };
-		B86FA1211D586D3100CAF4AF /* FOXViewContentEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FD1D586D3100CAF4AF /* FOXViewContentEvent.h */; };
-		B86FA1221D586D3100CAF4AF /* FOXViewContentEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FD1D586D3100CAF4AF /* FOXViewContentEvent.h */; };
+		B86FA1211D586D3100CAF4AF /* FOXViewContentEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FD1D586D3100CAF4AF /* FOXViewContentEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA1221D586D3100CAF4AF /* FOXViewContentEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FD1D586D3100CAF4AF /* FOXViewContentEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1231D586D3100CAF4AF /* FOXViewContentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0FE1D586D3100CAF4AF /* FOXViewContentEvent.m */; };
 		B86FA1241D586D3100CAF4AF /* FOXViewContentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0FE1D586D3100CAF4AF /* FOXViewContentEvent.m */; };
-		B86FA1251D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FF1D586D3100CAF4AF /* FOXViewListingEvent.h */; };
-		B86FA1261D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FF1D586D3100CAF4AF /* FOXViewListingEvent.h */; };
+		B86FA1251D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FF1D586D3100CAF4AF /* FOXViewListingEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA1261D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0FF1D586D3100CAF4AF /* FOXViewListingEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1271D586D3100CAF4AF /* FOXViewListingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA1001D586D3100CAF4AF /* FOXViewListingEvent.m */; };
 		B86FA1281D586D3100CAF4AF /* FOXViewListingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA1001D586D3100CAF4AF /* FOXViewListingEvent.m */; };
-		B86FA1291D586D3100CAF4AF /* FOXViewToppageEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA1011D586D3100CAF4AF /* FOXViewToppageEvent.h */; };
-		B86FA12A1D586D3100CAF4AF /* FOXViewToppageEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA1011D586D3100CAF4AF /* FOXViewToppageEvent.h */; };
+		B86FA1291D586D3100CAF4AF /* FOXViewToppageEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA1011D586D3100CAF4AF /* FOXViewToppageEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B86FA12A1D586D3100CAF4AF /* FOXViewToppageEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA1011D586D3100CAF4AF /* FOXViewToppageEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA12B1D586D3100CAF4AF /* FOXViewToppageEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA1021D586D3100CAF4AF /* FOXViewToppageEvent.m */; };
 		B86FA12C1D586D3100CAF4AF /* FOXViewToppageEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA1021D586D3100CAF4AF /* FOXViewToppageEvent.m */; };
 /* End PBXBuildFile section */
@@ -97,10 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B807531C1D4227C200A80949 /* StoreKit.framework in Frameworks */,
-				B80E3D6D1D50734100677EF3 /* CYZAdCommon.framework in Frameworks */,
-				B80E3D6E1D50734200677EF3 /* CYZUtil.framework in Frameworks */,
-				B80E3D6F1D50734200677EF3 /* FOXSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
