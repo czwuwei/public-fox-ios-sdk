@@ -10,6 +10,7 @@
 
 @interface FOXViewListingEvent : FOXExtensionBaseEvent
 <
+FOXExCriteoEventDelegate,
 FOXExDynamicRemarketingEventDelegate,
 FOXExDynalystCommerceEventDelegate
 >

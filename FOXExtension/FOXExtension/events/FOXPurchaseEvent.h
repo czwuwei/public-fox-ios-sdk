@@ -16,6 +16,7 @@
 <
 FOXExFacebookEventDelegate,
 FOXExTwitterEventDelegate,
+FOXExCriteoEventDelegate,
 FOXExVizuryEventDelegate,
 FOXExDynamicRemarketingEventDelegate,
 FOXExDynalystCommerceEventDelegate,

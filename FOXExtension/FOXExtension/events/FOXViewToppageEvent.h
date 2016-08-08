@@ -10,6 +10,7 @@
 
 @interface FOXViewToppageEvent : FOXExtensionBaseEvent
 <
+FOXExCriteoEventDelegate,
 FOXExVizuryEventDelegate
 >
 

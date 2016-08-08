@@ -14,6 +14,7 @@
 <
 FOXExFacebookEventDelegate,
 FOXExTwitterEventDelegate,
+FOXExCriteoEventDelegate,
 FOXExVizuryEventDelegate,
 FOXExDynamicRemarketingEventDelegate,
 FOXExDynalystGamesEventDelegate,
@@ -75,9 +76,18 @@ FOXExChartBoostEventDelegate
     }
 }
 
+#pragma mark - Cretio
+-(void) setPartnerId:(NSString *) partnerId {
+    [self putJsonValue:partnerId forKey:@"criteo_partner_id"];
+}
+
 #pragma mark - Vizury
 -(void) setCategoryId:(NSString *) categoryId {
     [self putJsonValue:categoryId forKey:@"category_id"];
+}
+
+-(void) setDatafeed:(NSDictionary *) datafeed {
+    [self putJsonValue:datafeed forKey:@"datafeed"];
 }
 
 

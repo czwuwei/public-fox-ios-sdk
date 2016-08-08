@@ -55,6 +55,10 @@
         self.price = price;
         self.quantity = quantity;
         self.currency = currency;
+
+        if (ltvId > 0) {
+            [self putJsonValue:@(ltvId) forKey:@"fox_cvpoint"];
+        }
     }
     return self;
 }

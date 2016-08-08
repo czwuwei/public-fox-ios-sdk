@@ -15,7 +15,15 @@
 }
 
 -(instancetype) initWithLtvId:(NSUInteger) ltvId {
-    return [super initWithEventName:@"_add_to_cart" andLtvId:ltvId];
+    self = [super initWithEventName:@"_add_to_cart" andLtvId:ltvId];
+
+    if (self) {
+        if (ltvId > 0) {
+            [self putJsonValue:@(ltvId) forKey:@"fox_cvpoint"];
+        }
+    }
+
+    return self;
 }
 
 @end

@@ -13,11 +13,35 @@
 
 @end
 
+
+
 #pragma mark - Twitter
 @protocol FOXExTwitterEventDelegate<NSObject>
 
 @optional
 -(void) setItemId:(NSString* _Nonnull) itemId;
+
+@end
+
+
+
+#pragma mark - Criteo
+@protocol FOXExCriteoEventDelegate<NSObject>
+
+@optional
+-(void) setDestination:(NSString* _Nonnull) destination;
+-(void) setOrigin:(NSString* _Nonnull) origin;
+-(void) setDin:(NSString* _Nonnull) din;
+-(void) setDout:(NSString* _Nonnull) dout;
+-(void) setPartnerId:(NSString* _Nonnull) partnerId;
+-(void) setCategoryId:(NSString* _Nonnull) categoryId;
+
+-(void) setTransactionId:(NSString* _Nonnull) transactionId;
+-(void) addProductById:(NSString* _Nonnull) productId
+        itemLocationId:(NSString* _Nullable) itemLocationId
+                 price:(double) price
+              quantity:(NSUInteger) quantity;
+-(void) setDatafeed:(NSDictionary* _Nonnull) datafeed;
 
 @end
 
