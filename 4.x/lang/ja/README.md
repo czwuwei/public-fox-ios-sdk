@@ -61,11 +61,15 @@ F.O.X SDKをアプリケーションに導入することで、以下の機能�
 
 Podfileファイルに下記の設定を追加してください。
 ```ruby
-foxVersion = "<VERSION>"
-pod "foxSdk", :podspec => "https://github.com/cyber-z/public-fox-ios-sdk/raw/#{foxVersion}/cocoapods/foxSdk.podspec"
+# 下記の一行をPodfileの一番最初に追加してください
+source "https://github.com/cyber-z/public-fox-ios-sdk.git"
+
+# 下記を指定したいターゲットに追加してください
+pod "foxSdk", "<VERSION>"
+
 ```
 <br />
-> ※ `<VERSION>`は指定したいリリースバージョン、3.3.0以上です。
+> ※ `<VERSION>`は指定したいリリースバージョン、4.0.0以上です。
 
 <div id="by_carthage"></div>
 
@@ -82,12 +86,10 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 
 ### 1.3 マニュアル導入する場合
 
-[ここのリンク](https://github.com/cyber-z/public_fox_ios_sdk/releases)から`FOXSDK_iOS_static_<VERSION>.zip`をダウンロードして展開し、`FOXSDK.framework`ファイルをXcodeプロジェクトに組み込んでください。
-
-**[詳細]**
-* [マニュアル導入詳細](./doc/integration/manual/README.md)
+[https://github.com/cyber-z/public_fox_ios_sdk/releases](https://github.com/cyber-z/public_fox_ios_sdk/releases)から`FOXSDK_iOS_static_<VERSION>.zip`をダウンロードして展開し、`FOXSDK.framework`ファイルをXcodeプロジェクトに組み込んでください。
 
 > ※ 既にアプリケーションにSDKが導入されている場合には、[最新バージョンへのアップデートについて](./doc/update/README.md)をご参照ください。
+> * tvOSの場合`FOXSDK_tvOS_static_<VERSION>.zip`をダウンロードしてください。
 
 
 <div id="setting_sdk"></div>
