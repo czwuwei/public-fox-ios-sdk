@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B80E3D6A1D50732C00677EF3 /* CYZAdCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C51D45DCA500B301CB /* CYZAdCommon.framework */; };
-		B80E3D6B1D50732C00677EF3 /* CYZUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C61D45DCA500B301CB /* CYZUtil.framework */; };
-		B80E3D6C1D50732C00677EF3 /* FOXSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83DB7C71D45DCA500B301CB /* FOXSDK.framework */; };
 		B81B88E81D46188400A62C59 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B83571801D5DB54F00EB528B /* CYZAdCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B835717D1D5DB54F00EB528B /* CYZAdCommon.framework */; };
+		B83571811D5DB54F00EB528B /* CYZUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B835717E1D5DB54F00EB528B /* CYZUtil.framework */; };
+		B83571821D5DB54F00EB528B /* FOXSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B835717F1D5DB54F00EB528B /* FOXSDK.framework */; };
+		B85F76FB1D5DB09E0004F3D6 /* FOXEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */; };
+		B85F76FD1D5DB1080004F3D6 /* FOXTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */; };
+		B85F76FE1D5DB1C10004F3D6 /* FOXTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */; };
+		B85F76FF1D5DB1C40004F3D6 /* FOXEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */; };
 		B86FA1031D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1041D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1051D586D3100CAF4AF /* FOXExtensionBaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */; };
@@ -62,9 +66,11 @@
 		B80752E91D421E6D00A80949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B807531B1D4227C200A80949 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B81B88E01D46181400A62C59 /* FOXExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FOXExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B83DB7C51D45DCA500B301CB /* CYZAdCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZAdCommon.framework; path = Carthage/Build/iOS/CYZAdCommon.framework; sourceTree = "<group>"; };
-		B83DB7C61D45DCA500B301CB /* CYZUtil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZUtil.framework; path = Carthage/Build/iOS/CYZUtil.framework; sourceTree = "<group>"; };
-		B83DB7C71D45DCA500B301CB /* FOXSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FOXSDK.framework; path = Carthage/Build/iOS/FOXSDK.framework; sourceTree = "<group>"; };
+		B835717D1D5DB54F00EB528B /* CYZAdCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZAdCommon.framework; path = Carthage/Build/iOS/CYZAdCommon.framework; sourceTree = "<group>"; };
+		B835717E1D5DB54F00EB528B /* CYZUtil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZUtil.framework; path = Carthage/Build/iOS/CYZUtil.framework; sourceTree = "<group>"; };
+		B835717F1D5DB54F00EB528B /* FOXSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FOXSDK.framework; path = Carthage/Build/iOS/FOXSDK.framework; sourceTree = "<group>"; };
+		B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXEvent.h; sourceTree = "<group>"; };
+		B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXTrack.h; sourceTree = "<group>"; };
 		B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXExtensionBaseEvent.h; sourceTree = "<group>"; };
 		B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXExtensionBaseEvent.m; sourceTree = "<group>"; };
 		B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXExtensionProtocols.h; sourceTree = "<group>"; };
@@ -100,9 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B80E3D6A1D50732C00677EF3 /* CYZAdCommon.framework in Frameworks */,
-				B80E3D6B1D50732C00677EF3 /* CYZUtil.framework in Frameworks */,
-				B80E3D6C1D50732C00677EF3 /* FOXSDK.framework in Frameworks */,
+				B83571801D5DB54F00EB528B /* CYZAdCommon.framework in Frameworks */,
+				B83571811D5DB54F00EB528B /* CYZUtil.framework in Frameworks */,
+				B83571821D5DB54F00EB528B /* FOXSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +146,9 @@
 		B807531A1D4227C200A80949 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B83DB7C51D45DCA500B301CB /* CYZAdCommon.framework */,
-				B83DB7C61D45DCA500B301CB /* CYZUtil.framework */,
-				B83DB7C71D45DCA500B301CB /* FOXSDK.framework */,
+				B835717D1D5DB54F00EB528B /* CYZAdCommon.framework */,
+				B835717E1D5DB54F00EB528B /* CYZUtil.framework */,
+				B835717F1D5DB54F00EB528B /* FOXSDK.framework */,
 				B807531B1D4227C200A80949 /* StoreKit.framework */,
 			);
 			name = Frameworks;
@@ -177,6 +183,8 @@
 		B86FA0ED1D586D3100CAF4AF /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */,
+				B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */,
 				B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */,
 				B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */,
 				B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */,
@@ -197,6 +205,8 @@
 				B86FA1151D586D3100CAF4AF /* FOXSearchEvent.h in Headers */,
 				B86FA1191D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */,
 				B86FA1091D586D3100CAF4AF /* FOXAddToCartEvent.h in Headers */,
+				B85F76FD1D5DB1080004F3D6 /* FOXTrack.h in Headers */,
+				B85F76FB1D5DB09E0004F3D6 /* FOXEvent.h in Headers */,
 				B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */,
 				B86FA1111D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */,
 				B86FA1251D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */,
@@ -212,6 +222,7 @@
 			files = (
 				B86FA1221D586D3100CAF4AF /* FOXViewContentEvent.h in Headers */,
 				B86FA1041D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */,
+				B85F76FE1D5DB1C10004F3D6 /* FOXTrack.h in Headers */,
 				B86FA1081D586D3100CAF4AF /* FOXExtensionProtocols.h in Headers */,
 				B86FA1161D586D3100CAF4AF /* FOXSearchEvent.h in Headers */,
 				B86FA11A1D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */,
@@ -220,6 +231,7 @@
 				B86FA1121D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */,
 				B86FA1261D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */,
 				B86FA12A1D586D3100CAF4AF /* FOXViewToppageEvent.h in Headers */,
+				B85F76FF1D5DB1C40004F3D6 /* FOXEvent.h in Headers */,
 				B86FA10E1D586D3100CAF4AF /* FOXLevelAchievedEvent.h in Headers */,
 				B86FA11E1D586D3100CAF4AF /* FOXViewCategoryEvent.h in Headers */,
 			);
@@ -457,10 +469,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = FOXExtension/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -480,10 +489,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = FOXExtension/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -510,7 +516,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.FOXExtensionDy;
 				PRODUCT_NAME = FOXExtension;
 				SKIP_INSTALL = YES;
@@ -532,7 +538,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.FOXExtensionDy;
 				PRODUCT_NAME = FOXExtension;
 				SKIP_INSTALL = YES;

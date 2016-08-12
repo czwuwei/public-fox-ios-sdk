@@ -8,8 +8,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "foxSdk.extension"
-  s.version          = "3.2.0"
+  s.name             = "foxSdk.ex"
+  s.version          = "4.0.0"
   s.summary          = "FOX iOS SDK extension for global use."
   s.description      = <<-DESC
                        Pod integration for F.O.X SDK
@@ -20,18 +20,13 @@ Pod::Spec.new do |s|
     :text => "Copyright © CyberZ, inc. All Rights Reserved."
   }
   s.author           = "CyberZ inc."
-  s.source           = {:http => "https://github.com/cyber-z/public-fox-ios-sdk/releases/download/#{s.version}/FOX_iOS_SDK_#{s.version}.zip"}
+  s.source          = { :git => "https://github.com/czwuwei/public-fox-ios-sdk.git", :branch => "20160708_4.0.0"}
+  s.source_files = "FOXExtension/**/*.{h,m}"
 
-  s.platform     = :ios, "7.0"
-  s.requires_arc = false
+  s.ios.deployment_target  = "7.0"
+  # s.tvos.deployment_target = "9.0"
+  s.requires_arc           = true
 
-  s.source_files = "**/*.{h,m}"
-  s.vendored_libraries = "**/*.a"
-
-  s.public_header_files = "**/*.h"
-
-  s.frameworks = "Foundation", "Security", "StoreKit", "AdSupport", "SystemConfiguration"
-  s.weak_framework = "SafariServices"
-  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/#{s.name}" }
+  s.frameworks = "Foundation", "StoreKit"
 
 end

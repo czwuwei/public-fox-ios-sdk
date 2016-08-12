@@ -6,7 +6,8 @@
 //  Copyright © 2016年 CyberZ. All rights reserved.
 //
 
-#import <FOXSDK/FOXSDK.h>
+#import "FOXEvent.h"
+#import "FOXTrack.h"
 #import "FOXExtensionProtocols.h"
 
 @interface FOXExtensionBaseEvent : FOXEvent
