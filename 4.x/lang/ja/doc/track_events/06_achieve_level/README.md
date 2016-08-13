@@ -4,41 +4,79 @@
 
 ### 実装例
 
-```java
-import co.cyberz.fox.FoxTrack;
-import co.cyberz.fox.support.event.AchievedLevelEvent;
+```objc
+#import <FOXExtension/FOXExtension.h>
 
-AchievedLevelEvent event = new AchievedLevelEvent(12345);
-event.addUserId("USER_A001")
-     .addEventLabel("MonthlyEvent")
-     .addEventField(123)
-     .addMainLevel(10)
-     .addSubLevel(9)
-     .addDescription("XXXXXXXXXXX")
-FoxTrack.sendEvent(event);
+FOXViewListingEvent* event = [[FOXViewListingEvent alloc] initWithLtvId:00000];
+[event setUserId:@"USER_A001"];
+
+[event addTrackInfoByEventLabel:@"eventLabel"
+                     eventField:1
+                      mainLevel:5
+                       subLevel:2
+                    description:@"description"
+                       dateType:@"dateType";
+
+[FOXTrack sendEvent:event];
 ```
 
-### AchievedLevelEvent API
 
-|返り値|メソッド|詳細|
-|:---:|:---|:---:|:---|
-|-|**AchievedLevelEvent** ( )|コンストラクター|
-|-|**AchievedLevelEvent** ( int ltvPointId ) <br><br> `ltvPointId` : LTV成果地点ID|コンストラクター。規定のイベント名を内部で定義しているため、媒体連携を行う場合はこちらをお使いください。LTV成果地点IDは管理者が発行した値を指定ください。|
-|-|**AchievedLevelEvent** ( String eventName, int ltvPointId ) <br><br> `eventName` : イベント名<br>`ltvPointId` : LTV成果地点ID|コンストラクター。任意のイベント名を指定する場合にはこちらを使用ください。|
-|AchievedLevelEvent|**addUserId** ( String id )<br><br>`id` : アプリ内のユーザーID|ユーザーIDを指定する場合に使用します。|
-|AchievedLevelEvent|**addItemId** ( String id )<br><br>`id` : アイテムID|アイテムIDを指定する場合に使用します。|
-|AchievedLevelEvent|**addEventLabel** ( String eventLabel )<br><br>`eventLabel` : イベントラベル|ゲーム内のイベント名を指定する場合に使用します。|
-|AchievedLevelEvent|**addEventField** ( int eventField )<br><br>`eventField` : イベントに対するID|Chartboostと連携を行う場合に必須となります。詳細は[こちら](http://partners.chartboost.com/#general-event-tracking-information)|
-|AchievedLevelEvent|**addMainLevel** ( String mainLevel )<br><br>`mainLevel` : メインレベル|レベルを指定する場合に使用します。|
-|AchievedLevelEvent|**addSubLevel** ( String subLevel )<br><br>`subLevel` : サブレベル|レベルを指定する場合に使用します。|
-|AchievedLevelEvent|**addDescription** ( String description )<br><br>`description` : レベルの説明|レベルの説明を指定する場合に使用します。|
+### FOXViewListingEvent API
+
+#### Constructor Methods
+1. `-(nullable instancetype) init`
+> デフォルトのイベント名と 0 の LTV ID を使うコンストラクタ
+
+2. `-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId`
+> デフォルトのイベント名と指定したltvIdを使うコンストラクタ
+> <br/>@param ltvId 指定したいLTV ID
+
+3. `-(nullable instancetype) initWithEventName:(NSString*)eventName andLtvId:(NSUInteger) ltvId`
+> 指定したイベント名と指定した LTV IDを使うコンストラクタ
+> <br/>@param eventName 指定したいイベント名
+> <br/>@param ltvId 指定したいLTV ID
+
+#### Common Methods
+1. `-(void) setUserId:(nonnull NSString*) userId`
+> ユーザーIDを指定する場合に使用します。
+> <br/>@param userId 指定したいユーザーID
+
+2. `-(void) putJsonValue:(nonnull id) value forKey:(nonnull NSString*) key`
+> 任意のJSON Key-Valueを追加する場合に使用します。
+> <br/>@param value value
+> <br/>@param key key
+
+
+#### Instance Methods
+
+1. `-(void) setItemId:(nonnull NSString*) itemId`
+> アイテムIDを指定する場合に使用します。addProductメソッドを使用する場合は呼び出さなくて結構です。
+> <br/>@param itemId アイテムID
+
+2. ```
+-(void) addTrackInfoByEventLabel:(nonnull NSString*) eventLabel
+                      eventField:(double) eventField
+                       mainLevel:(double) mainLevel
+                        subLevel:(double) subLevel
+                     description:(nullable NSString*) description
+                        dateType:(nonnull NSString*) dateType
+```
+> Levelの詳細情報を追加する
+> <br/>@param eventLabel ゲーム内のイベント名を指定する場合に使用します。
+> <br/>@param eventField Chartboostと連携を行う場合に必須となります。詳細は[こちら](http://partners.chartboost.com/#general-event-tracking-information)
+> <br/>@param mainLevel メインレベルを指定する場合に使用します。
+> <br/>@param subLevel サブレベルを指定する場合に使用します。
+> <br/>@param description レベルの説明を指定する場合に使用します。
+> <br/>@param dateType データタイプを指定する場合に使用します。
 
 
 ### 連携対応済み媒体
 
 * Chartboost
+* Facebook
+* Twitter
 
 ---
-[戻る](/4.x/lang/ja/doc/track_events/README.md#supported_events)
+[戻る](../../../track_events/README.md#supported_events)
 
 [トップ](/4.x/lang/ja/README.md)

@@ -13,15 +13,17 @@
 FOXExDynamicRemarketingEventDelegate
 >
 
+/** @name Instance Method */
+
 /**
  * Create event with default eventName and no ltvId.
  */
--(instancetype _Nullable) init;
+-(nullable instancetype) init;
 
 /**
  * Create event with default eventName and specified ltvId.
  * @param ltvId         LTV identifier given by FOX
  */
--(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId;
+-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId;
 
 @end

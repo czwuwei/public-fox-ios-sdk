@@ -7,22 +7,26 @@
 ## 1. イベント計測拡張プラグインモジュールのインポート
 
 アプリ内の各種イベントの計測を補助するためのサポートライブラリをインポートすることで、イベント計測の実装が容易になります。
-サポートライブラリでは[`FoxEvent`](/4.x/lang/ja/doc/sdk_api/README.md#foxevent)クラスを拡張し、各種イベント毎のクラスを提供しています。
+サポートライブラリでは[`FoxEvent`](../../sdk_api/README.md#foxevent)クラスを拡張し、各種イベント毎のクラスを提供しています。
+
+### 1.1 CocoaPods
+```ruby
+# 下記の一行をPodfileの一番最初に追加してください
+source "https://github.com/cyber-z/public-fox-ios-sdk.git"
+
+# 下記を指定したいターゲットに追加してください
+pod "foxSdk", "<VERSION>"
+pod "foxSdk.ex", "<VERSION>"
 
 ```
-repositories {
-    maven {
-        url "https://github.com/cyber-z/public--android-sdk/raw/master/mavenRepo"
-    }
-}
+> ※ `<VERSION>`は指定したいリリースバージョン、4.0.0以上です。
 
-dependencies {
-    // 計測用モジュール
-    compile 'co.cyberz.fox:foxtrack-core:4.0.0'
-    // イベント計測拡張プラグインモジュール
-    compile 'co.cyberz.fox.support:foxtrack-extension:1.0.0'
-}
+### 1.2 Carthage
 ```
+# 下記のをCartfileに追加してください
+github "cyber-z/public-fox-ios-sdk/FOXExtension" == 4.0.0
+```
+
 <div id="supported_events"></div>
 ## 2. 対応しているイベント計測
 
@@ -37,4 +41,4 @@ dependencies {
 > #### 9. [Searchイベント](./09_search/README.md)
 
 ---
-[トップ](/4.x/lang/ja/README.md)
+[トップ](../../README.md)

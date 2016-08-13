@@ -4,25 +4,46 @@
 
 ### 実装例
 
-```java
-import co.cyberz.fox.FoxTrack;
-import co.cyberz.fox.support.event.ViewCategoryEvent;
+```objc
+#import <FOXExtension/FOXExtension.h>
 
-ViewCategoryEvent event = new ViewCategoryEvent(12345);
-event.addUserId("USER_A001")
-     .addCategoryId("furniture")
-FoxTrack.sendEvent(event);
+FOXViewCategoryEvent* event = [[FOXViewCategoryEvent alloc] initWithLtvId:00000];
+[event setUserId:@"USER_A001"];
+[event setCategoryId:@"categoryId"]
+[FOXTrack sendEvent:event];
 ```
 
-### ViewCategoryEvent API
 
-|返り値|メソッド|詳細|
-|:---:|:---|:---:|:---|
-|-|**ViewCategoryEvent** ( )|コンストラクター|
-|-|**ViewCategoryEvent** ( int ltvPointId ) <br><br> `ltvPointId` : LTV成果地点ID|コンストラクター。規定のイベント名を内部で定義しているため、媒体連携を行う場合はこちらをお使いください。LTV成果地点IDは管理者が発行した値を指定ください。|
-|-|**ViewCategoryEvent** ( String eventName, int ltvPointId ) <br><br> `eventName` : イベント名<br>`ltvPointId` : LTV成果地点ID|コンストラクター。任意のイベント名を指定する場合にはこちらを使用ください。|
-|ViewCategoryEvent|**addUserId** ( String id )<br><br>`id` : アプリ内のユーザーID|ユーザーIDを指定する場合に使用します。|
-|ViewCategoryEvent|**addCategoryId** ( String id )<br><br>`id` : カテゴリID|閲覧したカテゴリIDを指定する場合に使用します。|
+### FOXViewListingEvent API
+
+#### Constructor Methods
+1. `-(nullable instancetype) init`
+> デフォルトのイベント名と 0 の LTV ID を使うコンストラクタ
+
+2. `-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId`
+> デフォルトのイベント名と指定したltvIdを使うコンストラクタ
+> <br/>@param ltvId 指定したいLTV ID
+
+3. `-(nullable instancetype) initWithEventName:(NSString*)eventName andLtvId:(NSUInteger) ltvId`
+> 指定したイベント名と指定した LTV IDを使うコンストラクタ
+> <br/>@param eventName 指定したいイベント名
+> <br/>@param ltvId 指定したいLTV ID
+
+#### Common Methods
+1. `-(void) setUserId:(nonnull NSString*) userId`
+> ユーザーIDを指定する場合に使用します。
+> <br/>@param userId 指定したいユーザーID
+
+2. `-(void) putJsonValue:(nonnull id) value forKey:(nonnull NSString*) key`
+> 任意のJSON Key-Valueを追加する場合に使用します。
+> <br/>@param value value
+> <br/>@param key key
+
+
+#### Instance Methods
+1. `-(void) setCategoryId:(nonnull NSString*) categoryId`
+> カテゴリーIDを指定する場合使用します
+> <br/>@param categoryId カテゴリーID
 
 
 ### 連携対応済み媒体
@@ -30,6 +51,6 @@ FoxTrack.sendEvent(event);
 * Vizury
 
 ---
-[戻る](/4.x/lang/ja/doc/track_events/README.md#supported_events)
+[戻る](../../../track_events/README.md#supported_events)
 
 [トップ](/4.x/lang/ja/README.md)

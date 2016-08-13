@@ -4,6 +4,80 @@
 
 ### 実装例
 
+```objc
+#import <FOXExtension/FOXExtension.h>
+
+FOXSearchEvent* event = [[FOXSearchEvent alloc] initWithLtvId:00000];
+[event setUserId:@"USER_A001"];
+[event setSearchTerm:@"keyword"];
+[event setDin:[NSDate new]];
+[FOXTrack sendEvent:event];
+```
+
+
+### FOXViewListingEvent API
+
+#### Constructor Methods
+1. `-(nullable instancetype) init`
+> デフォルトのイベント名と 0 の LTV ID を使うコンストラクタ
+
+2. `-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId`
+> デフォルトのイベント名と指定したltvIdを使うコンストラクタ
+> <br/>@param ltvId 指定したいLTV ID
+
+3. `-(nullable instancetype) initWithEventName:(NSString*)eventName andLtvId:(NSUInteger) ltvId`
+> 指定したイベント名と指定した LTV IDを使うコンストラクタ
+> <br/>@param eventName 指定したいイベント名
+> <br/>@param ltvId 指定したいLTV ID
+
+#### Common Methods
+1. `-(void) setUserId:(nonnull NSString*) userId`
+> ユーザーIDを指定する場合に使用します。
+> <br/>@param userId 指定したいユーザーID
+
+2. `-(void) putJsonValue:(nonnull id) value forKey:(nonnull NSString*) key`
+> 任意のJSON Key-Valueを追加する場合に使用します。
+> <br/>@param value value
+> <br/>@param key key
+
+### CompleteTutorialEvent API
+
+1. `-(void) setSearchTerm:(nonnull NSString*) searchTerm`
+> 検索文字列を指定する場合に使用します。
+> <br/>@param searchTerm 検索文字列
+
+2. `-(void) setDin:(nonnull NSDate*) din`
+> 開始日付の指定のある場合に使用します。
+> <br/>@param din 日付From
+
+3. `-(void) setDout:(nonnull NSDate*) dout`
+> 終了日付の指定のある場合に使用します。
+> <br/>@param din 日付To
+
+4. ```
+-(void) addProductById:(nonnull NSString*) productId
+        itemLocationId:(nullable NSString*) itemLocationId
+                 price:(double) price
+              quantity:(NSUInteger) quantity;
+```
+> 閲覧した商品の情報を指定する場合に使用します。
+> <br/>@param productId 商品ID
+> <br/>@param itemLocationId ロケーションID(商品の広告を特定の場所や地域に訴求したい場合に設定)
+> <br/>@param price 商品の単価
+> <br/>@param quantity 商品数
+
+5. `-(void) setDestination:(nonnull NSString*) destination`
+> 旅行アプリなど目的地を指定する場合に使用します。
+> <br/>@param destination 目的地
+
+6. `-(void) setOrigin:(nonnull NSString*) origin`
+> 旅行アプリなど出発地点を指定する場合に使用します。
+> <br/>@param origin 出発地点
+
+
+
+
+
 ```java
 import co.cyberz.fox.FoxTrack;
 import co.cyberz.fox.support.event.SearchEvent;
@@ -18,27 +92,11 @@ event.addUserId("USER_A001");
 FoxTrack.sendEvent(event);
 ```
 
-### SearchEvent API
-
-|返り値|メソッド|詳細|
-|:---:|:---|:---:|:---|
-|-|**SearchEvent** ( )|コンストラクター|
-|-|**SearchEvent** ( int ltvPointId ) <br><br> `ltvPointId` : LTV成果地点ID|コンストラクター。規定のイベント名を内部で定義しているため、媒体連携を行う場合はこちらをお使いください。LTV成果地点IDは管理者が発行した値を指定ください。|
-|-|**SearchEvent** ( String eventName, int ltvPointId ) <br><br> `eventName` : イベント名<br>`ltvPointId` : LTV成果地点ID|コンストラクター。任意のイベント名を指定する場合にはこちらを使用ください。|
-|SearchEvent|**addUserId** ( String id )<br><br>`id` : アプリ内のユーザーID|ユーザーIDを指定する場合に使用します。|
-|SearchEvent|**addSearchTerm** ( String searchTerm )<br><br>`searchTerm` : 検索文字列|検索文字列を指定する場合に使用します。|
-|SearchEvent|**addDin** ( String din )<br><br>`din` : 日付 From|日付の指定のある場合に使用します。|
-|SearchEvent|**addDout** ( String dout )<br><br>`dout` : 日付 To|日付の指定のある場合に使用します。|
-|SearchEvent|**addDestination** ( String destination )<br><br>`destination` : 行き先(目的地)|旅行アプリなど目的地を指定する場合に使用します。|
-|SearchEvent|**addOrigin** ( String origin )<br><br>`Origin` : 出発地点|旅行アプリなど出発地点を指定する場合に使用します。|
-|SearchEvent|**addProduct** ( String id, String itemLocationId, String category, double price, String currency )<br><br>`id` : 商品ID<br>`itemLocationId` : ロケーションID(商品の広告を特定の場所や地域に訴求したい場合に設定)<br>`price` : 商品の価格<br>`currency` : 通貨|閲覧した商品の情報を指定する場合に使用します。|
-
-
 ### 連携対応済み媒体
 
 * DynamicRemaketing
 
 ---
-[戻る](/4.x/lang/ja/doc/track_events/README.md#supported_events)
+[戻る](../../../track_events/README.md#supported_events)
 
 [トップ](/4.x/lang/ja/README.md)

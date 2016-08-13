@@ -8,17 +8,9 @@
 
 #import "FOXExtensionBaseEvent.h"
 
-@interface FOXLevelInfo : NSObject
-
-@property (nonatomic, copy) NSString* _Nullable eventLabel;
-@property (nonatomic) long eventField;
-@property (nonatomic) long mainLevel;
-@property (nonatomic) long subLevel;
-@property (nonatomic, copy) NSString* _Nullable description;
-@property (nonatomic, copy) NSString* _Nullable dateType;
-
-@end
-
+/**
+ * event for level achieved
+ */
 @interface FOXLevelAchievedEvent : FOXExtensionBaseEvent
 <
 FOXExFacebookEventDelegate,
@@ -26,17 +18,17 @@ FOXExTwitterEventDelegate,
 FOXExChartBoostEventDelegate
 >
 
-@property (nonatomic, copy) NSArray<FOXLevelInfo*>* _Nullable trackInfoList;
+/** @name Instance Method */
 
 /**
  * Create event with default eventName and no ltvId.
  */
--(instancetype _Nullable) init;
+-(nullable instancetype) init;
 
 /**
  * Create event with default eventName and specified ltvId.
  * @param ltvId         LTV identifier given by FOX
  */
--(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId;
+-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId;
 
 @end

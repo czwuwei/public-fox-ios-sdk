@@ -46,14 +46,14 @@ FOXExChartBoostEventDelegate
 -(void) addProductById:(NSString *) productId itemLocationId:(NSString *) itemLocationId price:(double) price quantity:(NSUInteger) quantity {
     if (productId) {
         NSMutableArray* productList = [self.eventInfo objectForKey:@"product"];
-
+        
         if (!productList) {
             productList = [NSMutableArray array];
         }
-
+        
         NSMutableDictionary* product = [NSMutableDictionary dictionary];
         [product setValue:productId forKey:@"id"];
-
+        
         if (itemLocationId) {
             [product setValue:itemLocationId forKey:@"item_location_id"];
         }
@@ -63,7 +63,7 @@ FOXExChartBoostEventDelegate
         if (quantity > 0) {
             [product setValue:@(quantity) forKey:@"quantity"];
         }
-
+        
         [productList addObject:product];
     }
 }
@@ -108,14 +108,18 @@ FOXExChartBoostEventDelegate
     [self putJsonValue:origin forKey:@"origin"];
 }
 
--(void) setDateIn:(NSDate *) dateIn {
+-(void) setDin:(NSDate *) dateIn {
     NSString* din = [self transDate:dateIn toFormat:kDateFormat];
     [self putJsonValue:din forKey:@"din"];
 }
 
--(void) setDateOut:(NSDate *) dateOut {
+-(void) setDout:(NSDate *) dateOut {
     NSString* dout = [self transDate:dateOut toFormat:kDateFormat];
     [self putJsonValue:dout forKey:@"dout"];
+}
+
+-(void)setSearchTerm:(NSString *)searchTerm {
+    [self putJsonValue:searchTerm forKey:@"searchTerm"];
 }
 
 #pragma mark - DynalystGames
@@ -143,7 +147,7 @@ FOXExChartBoostEventDelegate
     }
 }
 
--(void) setDynalystAdVertiserId:(NSString *) advertiserId {
+-(void) setDynalystAdvertiserId:(NSString *) advertiserId {
     [self putJsonValue:advertiserId forKey:@"dynalyst_advertiser_id"];
 }
 
@@ -168,6 +172,39 @@ FOXExChartBoostEventDelegate
 
 -(void) setRecipt:(NSString *) receipt {
     [self putJsonValue:receipt forKey:@"receipt"];
+}
+
+-(void)addTrackInfoByEventLabel:(NSString *)eventLabel
+                     eventField:(double)eventField
+                      mainLevel:(double)mainLevel
+                       subLevel:(double)subLevel
+                    description:(NSString *)description
+                       dateType:(NSString *)dateType {
+    
+    NSMutableArray* trackInfoList = [self.eventInfo objectForKey:@"trackInfo"];
+    
+    if (!trackInfoList) {
+        trackInfoList = [NSMutableArray array];
+    }
+    
+    NSMutableDictionary* trackInfo = [NSMutableDictionary dictionary];
+    if (eventLabel) {
+        [trackInfo setValue:eventLabel forKey:@"eventLabel"];
+    }
+    
+    [trackInfo setValue:@(eventField) forKey:@"eventField"];
+    [trackInfo setValue:@(mainLevel) forKey:@"mainLevel"];
+    [trackInfo setValue:@(subLevel) forKey:@"subLevel"];
+    
+    if (description) {
+        [trackInfo setValue:description forKey:@"description"];
+    }
+    
+    if (dateType) {
+        [trackInfo setValue:dateType forKey:@"dateType"];
+    }
+    
+    [trackInfoList addObject:trackInfo];
 }
 
 #pragma mark - override

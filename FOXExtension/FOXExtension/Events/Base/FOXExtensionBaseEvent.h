@@ -10,14 +10,21 @@
 #import "FOXTrack.h"
 #import "FOXExtensionProtocols.h"
 
+/**
+ * base event class, implements protocols of all medias
+ */
 @interface FOXExtensionBaseEvent : FOXEvent
 
 /**
  * Add user identifier for event.
  * @param userId        Specified user identifier
  */
--(void) setUserId:(NSString* _Nonnull) userId;
+-(void) setUserId:(nonnull NSString*) userId;
 
--(void) putJsonValue:(id _Nonnull) value forKey:(NSString* _Nonnull) key;
+
+/**
+ * put JSON Key-Value to event
+ */
+-(void) putJsonValue:(nonnull id) value forKey:(nonnull NSString*) key;
 
 @end

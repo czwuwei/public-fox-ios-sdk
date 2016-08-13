@@ -4,27 +4,55 @@
 
 ### 実装例
 
-```java
-import co.cyberz.fox.FoxTrack;
-import co.cyberz.fox.support.event.CompleteTutorialEvent;
 
-CompleteTutorialEvent event = new CompleteTutorialEvent(12345);
-event.addUserId("USER_A001");
-FoxTrack.sendEvent(event);
+```objc
+#import <FOXExtension/FOXExtension.h>
+
+FOXTutorialEvent* event = [[FOXTutorialEvent alloc] initWithLtvId:00000];
+[event setUserId:@"USER_A001"];
+[FOXTrack sendEvent:event];
 ```
+
+
+### FOXViewListingEvent API
+
+#### Constructor Methods
+1. `-(nullable instancetype) init`
+> デフォルトのイベント名と 0 の LTV ID を使うコンストラクタ
+
+2. `-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId`
+> デフォルトのイベント名と指定したltvIdを使うコンストラクタ
+> <br/>@param ltvId 指定したいLTV ID
+
+3. `-(nullable instancetype) initWithEventName:(NSString*)eventName andLtvId:(NSUInteger) ltvId`
+> 指定したイベント名と指定した LTV IDを使うコンストラクタ
+> <br/>@param eventName 指定したいイベント名
+> <br/>@param ltvId 指定したいLTV ID
+
+#### Common Methods
+1. `-(void) setUserId:(nonnull NSString*) userId`
+> ユーザーIDを指定する場合に使用します。
+> <br/>@param userId 指定したいユーザーID
+
+2. `-(void) putJsonValue:(nonnull id) value forKey:(nonnull NSString*) key`
+> 任意のJSON Key-Valueを追加する場合に使用します。
+> <br/>@param value value
+> <br/>@param key key
 
 ### CompleteTutorialEvent API
 
-|返り値|メソッド|詳細|
-|:---:|:---|:---:|:---|
-|-|**CompleteTutorialEvent** ( )|コンストラクター|
-|-|**CompleteTutorialEvent** ( int ltvPointId ) <br><br> `ltvPointId` : LTV成果地点ID|コンストラクター。規定のイベント名を内部で定義しているため、媒体連携を行う場合はこちらをお使いください。LTV成果地点IDは管理者が発行した値を指定ください。|
-|-|**CompleteTutorialEvent** ( String eventName, int ltvPointId ) <br><br> `eventName` : イベント名<br>`ltvPointId` : LTV成果地点ID|コンストラクター。任意のイベント名を指定する場合にはこちらを使用ください。|
-|CompleteTutorialEvent|**addUserId** ( String id )<br><br>`id` : アプリ内のユーザーID|ユーザーIDを指定する場合に使用します。|
-|CompleteTutorialEvent|**addItemId** ( String id )<br><br>`id` : アイテムID|アイテムIDを指定する場合に使用します。|
+1. `-(void) setItemId:(nonnull NSString*) itemId`
+> アイテムIDを指定する場合に使用します。addProductメソッドを使用する場合は呼び出さなくて結構です。
+> <br/>@param itemId アイテムID
+
+### 連携対応済み媒体
+
+* Facebook
+* Twitter
+* DynalystGames
 
 
 ---
-[戻る](/4.x/lang/ja/doc/track_events/README.md#supported_events)
+[戻る](../../../track_events/README.md#supported_events)
 
 [トップ](/4.x/lang/ja/README.md)

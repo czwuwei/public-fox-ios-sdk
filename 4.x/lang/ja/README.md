@@ -89,7 +89,7 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 [https://github.com/cyber-z/public_fox_ios_sdk/releases](https://github.com/cyber-z/public_fox_ios_sdk/releases)から`FOXSDK_iOS_static_<VERSION>.zip`をダウンロードして展開し、`FOXSDK.framework`ファイルをXcodeプロジェクトに組み込んでください。
 
 > ※ 既にアプリケーションにSDKが導入されている場合には、[最新バージョンへのアップデートについて](./doc/update/README.md)をご参照ください。
-> * tvOSの場合`FOXSDK_tvOS_static_<VERSION>.zip`をダウンロードしてください。
+> * tvOSの場合`FOXSDK_tvOS_static_<VERSION>.zip`をダウンロードしてください。導入手順はiOSと同じです。
 
 
 <div id="setting_sdk"></div>
@@ -177,7 +177,7 @@ F.O.X SDKのアクティベーションを行うため、[`FOXConfig`](./doc/sdk
 F.O.X SDKではiOS9からリリースされた新しいWebView形式である `SFSafariViewController` を初回起動時に起動させ計測することで、バックグラウンド表示によるユーザービリティの低下を防止することが出来ます。
 
 以下の[`[FOXTrack onLaunch]`](./doc/sdk_api/README.md#foxtrack)メソッドをアプリケーションの起動時に`didFinishLaunchingWithOptions`メソッド内に実装します。
-また`SFSafariViewController`の制御を行うため、[リエンゲージメント計測](#tracking_reengagement)実装と同じ`[FOXTrack handleOpenURL]`メソッドを`openURL`メソッド内に実装します。
+また`SFSafariViewController`でのインストール計測を行った後に`SFSafariViewController`を閉じるため、`-(BOOL)application:openURL:sourceApplication:annotation:`メソッド内、`[FOXTrack handleOpenURL:url]`を実装を行ってください。
 
 ```objc
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
@@ -200,7 +200,7 @@ F.O.X SDKではiOS9からリリースされた新しいWebView形式である `S
  ```objc
  FOXTrackOption* option = [FOXTrackOption new];
  option.onTrackFinished = ^() {
-     NSLog(@"callback after conversion finished");
+     NSLog(@"callback after tracking finished");
      // set customize UserAgent
  };
  [FOXTrack onLaunchWithOption:option];
@@ -246,11 +246,11 @@ restorationHandler:(void (^)(NSArray *restorableObjects)) restorationHandler {
 ```
 > ※ カスタマイズURL SchemeとUniversal Link 両方対応の場合、両方の実装が必要です。
 
+[リエンゲージ計測を行う場合のテストの手順](./doc/reengagement_test/README.md)
+
 <div id="tracking_event"></div>
 
 ## 6. アプリ内イベントの計測
-
-* [イベント計測の詳細](./doc/track_events/README.md)
 
 <div id="tracking_session"></div>
 

@@ -24,14 +24,16 @@ FOXExDynalystGamesEventDelegate,
 FOXExChartBoostEventDelegate
 >
 
+/** @name Instance Method */
+
 /**
  * Create event with default eventName, no ltvId and purchase detail.
-
+ 
  * @param transaction   StoreKit payment transaction
  * @param product       StoreKit product detail
  */
--(instancetype _Nullable) initWithTransaction:(SKPaymentTransaction* _Nonnull) transaction
-                                      product:(SKProduct* _Nonnull) product;
+-(nullable instancetype) initWithTransaction:(SKPaymentTransaction* _Nonnull) transaction
+                                     product:(SKProduct* _Nonnull) product;
 
 /**
  * Create event with default eventName, specified ltvId and purchase detail.
@@ -39,9 +41,9 @@ FOXExChartBoostEventDelegate
  * @param transaction   StoreKit payment transaction
  * @param product       StoreKit product detail
  */
--(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId
-                            transaction:(SKPaymentTransaction* _Nonnull) transaction
-                                product:(SKProduct* _Nonnull) product;
+-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId
+                           transaction:(SKPaymentTransaction* _Nonnull) transaction
+                               product:(SKProduct* _Nonnull) product;
 
 /**
  * Create event with default eventName, no ltvId and purchase detail.
@@ -50,11 +52,11 @@ FOXExChartBoostEventDelegate
  * @param price         Price
  * @param currency      Currency
  */
--(instancetype _Nullable) initWithItemName:(NSString* _Nullable) itemName
-                                       sku:(NSString* _Nonnull) sku
-                                     price:(double) price
-                                  quantity:(NSUInteger) quantity
-                                  currency:(NSString* _Nullable) currency;
+-(nullable instancetype) initWithItemName:(nullable NSString*) itemName
+                                      sku:(nonnull NSString*) sku
+                                    price:(double) price
+                                 quantity:(NSUInteger) quantity
+                                 currency:(nullable NSString*) currency;
 
 /**
  * Create event with default eventName, specified ltvId and purchase detail.
@@ -64,11 +66,11 @@ FOXExChartBoostEventDelegate
  * @param price         Price
  * @param currency      Currency
  */
--(instancetype _Nullable) initWithLtvId:(NSUInteger) ltvId
-                               itemName:(NSString* _Nullable) itemName
-                                    sku:(NSString* _Nonnull) sku
-                                  price:(double) price
-                               quantity:(NSUInteger) quantity
-                               currency:(NSString* _Nullable) currency;
+-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId
+                              itemName:(nullable NSString*) itemName
+                                   sku:(nonnull NSString*) sku
+                                 price:(double) price
+                              quantity:(NSUInteger) quantity
+                              currency:(nullable NSString*) currency;
 
 @end

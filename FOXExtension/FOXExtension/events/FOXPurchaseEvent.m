@@ -30,7 +30,7 @@
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     [formatter setLocale:product.priceLocale];
     NSString *currency = [formatter currencyCode];
-
+    
     self = [self initWithLtvId:ltvId
                       itemName:product.localizedTitle
                            sku:product.productIdentifier
@@ -44,18 +44,18 @@
 }
 
 -(instancetype) initWithLtvId:(NSUInteger) ltvId
-                     itemName:(NSString * _Nullable) itemName
+                     itemName:(nullable NSString*) itemName
                           sku:(NSString * _Nonnull) sku
                         price:(double) price
                      quantity:(NSUInteger) quantity
-                     currency:(NSString * _Nullable) currency {
+                     currency:(nullable NSString*) currency {
     self = [super initWithEventName:@"_purcase" andLtvId:ltvId];
     if (self) {
         self.itemName = itemName;
         self.price = price;
         self.quantity = quantity;
         self.currency = currency;
-
+        
         if (ltvId > 0) {
             [self putJsonValue:@(ltvId) forKey:@"fox_cvpoint"];
         }
