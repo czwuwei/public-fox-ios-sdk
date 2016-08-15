@@ -20,15 +20,16 @@ Pod::Spec.new do |s|
     :text => "Copyright © CyberZ, inc. All Rights Reserved."
   }
   s.author           = "CyberZ inc."
-  s.source          = { :git => "https://github.com/czwuwei/public-fox-ios-sdk.git", :branch => "20160708_4.0.0"}
-  s.source_files = "FOXExtension/**/*.{h,m}"
+  s.source           = { :git => "https://github.com/czwuwei/public-fox-ios-sdk.git", :branch => "20160708_4.0.0"}
+  s.source_files     = "FOXExtension/**/*.{h,m}"
 
   s.ios.deployment_target  = "7.0"
-  # s.tvos.deployment_target = "9.0"
+  s.tvos.deployment_target = "9.0"
   s.requires_arc           = true
 
   s.frameworks = "Foundation", "StoreKit"
 
-  s.dependency "foxSdk", "4.0.0"
+  s.ios.dependency "foxSdk", "4.0.0"
+  s.tvos.dependency "foxSdk.tvos", "4.0.0"
 
 end
