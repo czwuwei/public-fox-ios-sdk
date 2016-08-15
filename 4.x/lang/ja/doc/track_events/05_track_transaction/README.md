@@ -5,7 +5,7 @@ Track Transaction（商品購入）イベントが発生する箇所に、下記
 ### 実装例
 
 ```objc
-#import <FOXExtension/FOXExtension.h>
+#import "FOXExtension.h"
 
 FOXPurchaseEvent* event = [[FOXPurchaseEvent alloc] initWithLtvId:00000];
 [event setUserId:@"USER_A001"];

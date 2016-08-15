@@ -6,7 +6,7 @@
 
 
 ```objc
-#import <FOXExtension/FOXExtension.h>
+#import "FOXExtension.h"
 
 FOXTutorialEvent* event = [[FOXTutorialEvent alloc] initWithLtvId:00000];
 [event setUserId:@"USER_A001"];

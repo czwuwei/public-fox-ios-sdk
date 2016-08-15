@@ -5,7 +5,7 @@ View Home（ホーム画面）イベントが発生する箇所に、下記に�
 ### 実装例
 
 ```objc
-#import <FOXExtension/FOXExtension.h>
+#import "FOXExtension.h"
 
 FOXViewToppageEvent* event = [[FOXViewToppageEvent alloc] initWithLtvId:00000];
 [event setUserId:@"USER_A001"];

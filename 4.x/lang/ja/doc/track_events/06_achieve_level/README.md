@@ -5,7 +5,7 @@
 ### 実装例
 
 ```objc
-#import <FOXExtension/FOXExtension.h>
+#import "FOXExtension.h"
 
 FOXViewListingEvent* event = [[FOXViewListingEvent alloc] initWithLtvId:00000];
 [event setUserId:@"USER_A001"];

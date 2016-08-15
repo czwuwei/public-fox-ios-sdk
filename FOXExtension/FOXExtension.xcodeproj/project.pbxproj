@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10CC5C5D46A68B556B03EB96 /* libPods-FOXExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0325AE4CE4FAA84405AB7F5F /* libPods-FOXExtension.a */; };
 		B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B81B88E81D46188400A62C59 /* FOXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B80752E81D421E6D00A80949 /* FOXExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B83571801D5DB54F00EB528B /* CYZAdCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B835717D1D5DB54F00EB528B /* CYZAdCommon.framework */; };
 		B83571811D5DB54F00EB528B /* CYZUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B835717E1D5DB54F00EB528B /* CYZUtil.framework */; };
 		B83571821D5DB54F00EB528B /* FOXSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B835717F1D5DB54F00EB528B /* FOXSDK.framework */; };
-		B85F76FB1D5DB09E0004F3D6 /* FOXEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */; };
-		B85F76FD1D5DB1080004F3D6 /* FOXTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */; };
-		B85F76FE1D5DB1C10004F3D6 /* FOXTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */; };
-		B85F76FF1D5DB1C40004F3D6 /* FOXEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */; };
 		B86FA1031D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1041D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B86FA1051D586D3100CAF4AF /* FOXExtensionBaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */; };
@@ -61,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0325AE4CE4FAA84405AB7F5F /* libPods-FOXExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FOXExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08244C96DE129ACD0B8C719E /* Pods-FOXExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FOXExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FOXExtension/Pods-FOXExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		B80752E51D421E6D00A80949 /* FOXExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FOXExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80752E81D421E6D00A80949 /* FOXExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FOXExtension.h; sourceTree = "<group>"; };
 		B80752E91D421E6D00A80949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,8 +68,6 @@
 		B835717D1D5DB54F00EB528B /* CYZAdCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZAdCommon.framework; path = Carthage/Build/iOS/CYZAdCommon.framework; sourceTree = "<group>"; };
 		B835717E1D5DB54F00EB528B /* CYZUtil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CYZUtil.framework; path = Carthage/Build/iOS/CYZUtil.framework; sourceTree = "<group>"; };
 		B835717F1D5DB54F00EB528B /* FOXSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FOXSDK.framework; path = Carthage/Build/iOS/FOXSDK.framework; sourceTree = "<group>"; };
-		B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXEvent.h; sourceTree = "<group>"; };
-		B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXTrack.h; sourceTree = "<group>"; };
 		B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXExtensionBaseEvent.h; sourceTree = "<group>"; };
 		B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXExtensionBaseEvent.m; sourceTree = "<group>"; };
 		B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXExtensionProtocols.h; sourceTree = "<group>"; };
@@ -92,6 +89,7 @@
 		B86FA1001D586D3100CAF4AF /* FOXViewListingEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXViewListingEvent.m; sourceTree = "<group>"; };
 		B86FA1011D586D3100CAF4AF /* FOXViewToppageEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOXViewToppageEvent.h; sourceTree = "<group>"; };
 		B86FA1021D586D3100CAF4AF /* FOXViewToppageEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOXViewToppageEvent.m; sourceTree = "<group>"; };
+		E3A7F267655076CCDF6E47C9 /* Pods-FOXExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FOXExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-FOXExtension/Pods-FOXExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10CC5C5D46A68B556B03EB96 /* libPods-FOXExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,12 +114,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83BCD93D84717E6506302AB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08244C96DE129ACD0B8C719E /* Pods-FOXExtension.debug.xcconfig */,
+				E3A7F267655076CCDF6E47C9 /* Pods-FOXExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B80752DB1D421E6D00A80949 = {
 			isa = PBXGroup;
 			children = (
 				B80752E71D421E6D00A80949 /* FOXExtension */,
 				B80752E61D421E6D00A80949 /* Products */,
 				B807531A1D4227C200A80949 /* Frameworks */,
+				83BCD93D84717E6506302AB6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +159,7 @@
 				B835717E1D5DB54F00EB528B /* CYZUtil.framework */,
 				B835717F1D5DB54F00EB528B /* FOXSDK.framework */,
 				B807531B1D4227C200A80949 /* StoreKit.framework */,
+				0325AE4CE4FAA84405AB7F5F /* libPods-FOXExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,8 +193,6 @@
 		B86FA0ED1D586D3100CAF4AF /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B85F76FC1D5DB1080004F3D6 /* FOXTrack.h */,
-				B85F76FA1D5DB09E0004F3D6 /* FOXEvent.h */,
 				B86FA0EE1D586D3100CAF4AF /* FOXExtensionBaseEvent.h */,
 				B86FA0EF1D586D3100CAF4AF /* FOXExtensionBaseEvent.m */,
 				B86FA0F01D586D3100CAF4AF /* FOXExtensionProtocols.h */,
@@ -205,8 +213,6 @@
 				B86FA1151D586D3100CAF4AF /* FOXSearchEvent.h in Headers */,
 				B86FA1191D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */,
 				B86FA1091D586D3100CAF4AF /* FOXAddToCartEvent.h in Headers */,
-				B85F76FD1D5DB1080004F3D6 /* FOXTrack.h in Headers */,
-				B85F76FB1D5DB09E0004F3D6 /* FOXEvent.h in Headers */,
 				B80752EA1D421E6D00A80949 /* FOXExtension.h in Headers */,
 				B86FA1111D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */,
 				B86FA1251D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */,
@@ -222,7 +228,6 @@
 			files = (
 				B86FA1221D586D3100CAF4AF /* FOXViewContentEvent.h in Headers */,
 				B86FA1041D586D3100CAF4AF /* FOXExtensionBaseEvent.h in Headers */,
-				B85F76FE1D5DB1C10004F3D6 /* FOXTrack.h in Headers */,
 				B86FA1081D586D3100CAF4AF /* FOXExtensionProtocols.h in Headers */,
 				B86FA1161D586D3100CAF4AF /* FOXSearchEvent.h in Headers */,
 				B86FA11A1D586D3100CAF4AF /* FOXTutorialEvent.h in Headers */,
@@ -231,7 +236,6 @@
 				B86FA1121D586D3100CAF4AF /* FOXPurchaseEvent.h in Headers */,
 				B86FA1261D586D3100CAF4AF /* FOXViewListingEvent.h in Headers */,
 				B86FA12A1D586D3100CAF4AF /* FOXViewToppageEvent.h in Headers */,
-				B85F76FF1D5DB1C40004F3D6 /* FOXEvent.h in Headers */,
 				B86FA10E1D586D3100CAF4AF /* FOXLevelAchievedEvent.h in Headers */,
 				B86FA11E1D586D3100CAF4AF /* FOXViewCategoryEvent.h in Headers */,
 			);
@@ -244,10 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B80752ED1D421E6D00A80949 /* Build configuration list for PBXNativeTarget "FOXExtension" */;
 			buildPhases = (
+				0A43A8D50545D5201667E692 /* [CP] Check Pods Manifest.lock */,
 				B80752E01D421E6D00A80949 /* Sources */,
 				B80752E11D421E6D00A80949 /* Frameworks */,
 				B80752E21D421E6D00A80949 /* Headers */,
 				B80752E31D421E6D00A80949 /* Resources */,
+				3A6E19ACE764E077B837216F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,6 +336,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A43A8D50545D5201667E692 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3A6E19ACE764E077B837216F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FOXExtension/Pods-FOXExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B80752E01D421E6D00A80949 /* Sources */ = {
@@ -463,6 +502,7 @@
 		};
 		B80752EE1D421E6D00A80949 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08244C96DE129ACD0B8C719E /* Pods-FOXExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -483,6 +523,7 @@
 		};
 		B80752EF1D421E6D00A80949 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3A7F267655076CCDF6E47C9 /* Pods-FOXExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;

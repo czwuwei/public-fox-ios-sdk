@@ -5,7 +5,7 @@ View Listing（複数商品閲覧）イベントが発生する箇所に、下�
 ### 実装例
 
 ```objc
-#import <FOXExtension/FOXExtension.h>
+#import "FOXExtension.h"
 
 FOXViewListingEvent* event = [[FOXViewListingEvent alloc] initWithLtvId:00000];
 [event setUserId:@"USER_A001"];
