@@ -8,7 +8,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "FOXSDK"
+  s.name             = "FOXSDKDy"
   s.version          = "4.0.0"
   s.summary          = "FOX iOS SDK for global use."
   s.description      = <<-DESC
@@ -21,9 +21,9 @@ Pod::Spec.new do |s|
   }
   s.author           = "CyberZ inc."
 
-  s.platform     = :ios, "7.0"
-  s.source           = {:http => "https://github.com/czwuwei/public-fox-ios-sdk/releases/download/#{s.version}/FOXSDK_iOS_static_#{s.version}.zip"}
-  s.vendored_frameworks = "FOXSDK_iOS_static_#{s.version}/FOXSDK.framework"
+  s.platform     = :ios, "8.0"
+  s.source           = {:http => "https://github.com/czwuwei/public-fox-ios-sdk/releases/download/#{s.version}/FOXSDK_iOS_#{s.version}_dynamic.framework.zip"}
+  s.vendored_frameworks = "**/iOS/*.framework"
 
   s.frameworks = "Foundation", "Security", "AdSupport", "SystemConfiguration"
 

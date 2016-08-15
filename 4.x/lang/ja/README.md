@@ -59,15 +59,48 @@ F.O.X SDKをアプリケーションに導入することで、以下の機能�
 
 ### 1.1 CocoaPodsによって導入する場合
 
-Podfileファイルに下記の設定を追加してください。
+下記のようにPodfileファイルを更新してください。
+* **iOS objective-cで開発する場合**
+
 ```ruby
 # 下記の一行をPodfileの一番最初に追加してください
 source "https://github.com/cyber-z/public-fox-ios-sdk.git"
 
 # 下記を指定したいターゲットに追加してください
-pod "foxSdk", "<VERSION>"
+pod "FOXSDK", "<VERSION>"
 
 ```
+* **tvOS objective-cで開発する場合**
+```ruby
+# 下記の一行をPodfileの一番最初に追加してください
+source "https://github.com/cyber-z/public-fox-ios-sdk.git"
+
+# 下記を指定したいターゲットに追加してください
+pod "FOXSDKTv", "<VERSION>"
+```
+
+* **iOS Swiftでdynamic frameworkを利用する場合**
+```ruby
+# 下記の一行をPodfileの一番最初に追加してください
+source "https://github.com/cyber-z/public-fox-ios-sdk.git"
+
+# dynamic frameworkを有効に
+use_frameworks!
+
+pod "FOXSDKDy", "<VERSION>"
+```
+
+* **tvOS Swiftでdynamic frameworkを利用する場合**
+```ruby
+# 下記の一行をPodfileの一番最初に追加してください
+source "https://github.com/cyber-z/public-fox-ios-sdk.git"
+
+# dynamic frameworkを有効に
+use_frameworks!
+
+pod "FOXSDKTvDy", "<VERSION>"
+```
+
 <br />
 > ※ `<VERSION>`は指定したいリリースバージョン、4.0.0以上です。
 

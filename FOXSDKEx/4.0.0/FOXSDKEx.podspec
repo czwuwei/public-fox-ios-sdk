@@ -8,9 +8,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "foxSdk.tvos"
+  s.name             = "FOXSDKEx"
   s.version          = "4.0.0"
-  s.summary          = "FOX tvOS SDK for global use."
+  s.summary          = "FOX iOS SDK extension for global use."
   s.description      = <<-DESC
                        Pod integration for F.O.X SDK
                        DESC
@@ -20,11 +20,16 @@ Pod::Spec.new do |s|
     :text => "Copyright © CyberZ, inc. All Rights Reserved."
   }
   s.author           = "CyberZ inc."
+  s.source           = { :git => "https://github.com/czwuwei/public-fox-ios-sdk.git", :branch => "20160708_4.0.0"}
+  s.source_files     = "FOXExtension/**/*.{h,m}"
 
-  s.platform     = :tvos, "9.0"
-  s.source           = {:http => "https://github.com/czwuwei/public-fox-ios-sdk/releases/download/#{s.version}/FOXSDK_tvOS_static_#{s.version}.zip"}
-  s.vendored_frameworks = "FOXSDK_tvOS_static_#{s.version}/FOXSDK.framework"
+  s.ios.deployment_target  = "7.0"
+  s.tvos.deployment_target = "9.0"
+  s.requires_arc           = true
 
-  s.frameworks = "Foundation", "Security", "AdSupport", "SystemConfiguration"
+  s.frameworks = "Foundation", "StoreKit"
+
+  s.ios.dependency "FOXSDK", "4.0.0"
+  s.tvos.dependency "FOXSDKTv", "4.0.0"
 
 end

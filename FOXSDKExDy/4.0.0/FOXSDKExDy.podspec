@@ -8,7 +8,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "foxSdk.ex"
+  s.name             = "FOXSDKExDy"
   s.version          = "4.0.0"
   s.summary          = "FOX iOS SDK extension for global use."
   s.description      = <<-DESC
@@ -23,13 +23,13 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/czwuwei/public-fox-ios-sdk.git", :branch => "20160708_4.0.0"}
   s.source_files     = "FOXExtension/**/*.{h,m}"
 
-  s.ios.deployment_target  = "7.0"
+  s.ios.deployment_target  = "8.0"
   s.tvos.deployment_target = "9.0"
   s.requires_arc           = true
 
   s.frameworks = "Foundation", "StoreKit"
 
-  s.ios.dependency "foxSdk", "4.0.0"
-  s.tvos.dependency "foxSdk.tvos", "4.0.0"
+  s.ios.dependency "FOXSDKDy", "4.0.0"
+  s.tvos.dependency "FOXSDKTvDy", "4.0.0"
 
 end

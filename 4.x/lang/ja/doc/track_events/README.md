@@ -10,16 +10,34 @@
 サポートライブラリでは[`FoxEvent`](../../sdk_api/README.md#foxevent)クラスを拡張し、各種イベント毎のクラスを提供しています。
 
 ### 1.1 CocoaPods
+
+下記のようにPodfileファイルを更新してください。
+* **iOS objective-cで開発する場合**
+
 ```ruby
 # 下記の一行をPodfileの一番最初に追加してください
 source "https://github.com/cyber-z/public-fox-ios-sdk.git"
 
 # 下記を指定したいターゲットに追加してください
-pod "foxSdk", "<VERSION>"
-pod "foxSdk.ex", "<VERSION>"
+pod "FOXSDK", "<VERSION>"
+pod "FOXSDKEx", "<VERSION>"
 
 ```
+* **iOS Swiftでdynamic frameworkを利用する場合**
+```ruby
+# 下記の一行をPodfileの一番最初に追加してください
+source "https://github.com/cyber-z/public-fox-ios-sdk.git"
+
+# dynamic frameworkを有効に
+use_frameworks!
+
+pod "FOXSDKDy", "<VERSION>"
+pod "FOXSDKExDy", "<VERSION>"
+```
+
 > ※ `<VERSION>`は指定したいリリースバージョン、4.0.0以上です。
+
+
 
 ### 1.2 Carthage
 ```
