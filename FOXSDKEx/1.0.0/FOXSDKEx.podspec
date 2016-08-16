@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FOXSDKEx"
-  s.version          = "4.0.0"
+  s.version          = "1.0.0"
   s.summary          = "FOX iOS SDK extension for global use."
   s.description      = <<-DESC
                        Pod integration for F.O.X SDK
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     :text => "Copyright © CyberZ, inc. All Rights Reserved."
   }
   s.author           = "CyberZ inc."
-  s.source           = { :git => "https://github.com/czwuwei/public-fox-ios-sdk.git", :branch => "20160708_4.0.0"}
+  s.source           = { :git => "https://github.com/czwuwei/fox-ios-sdk-extension.git", :branch => "master"}
   s.source_files     = "FOXExtension/**/*.{h,m}"
 
   s.ios.deployment_target  = "7.0"
