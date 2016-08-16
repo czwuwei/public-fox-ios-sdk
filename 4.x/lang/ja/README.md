@@ -7,15 +7,15 @@ Force Operation X (以下F.O.X)は、スマートフォンにおける広告効�
 ## 目次
 
 * **[1. インストール](#install_sdk)**
-	* [1.1 CocoaPodsによって導入](#by_cocoapods)
-	* [1.2 Carthageによって導入](#by_carthage)
-	* [1.3 マニュアルによって導入](#by_manual)
+	* [1.1 CocoaPodsによる導入](#by_cocoapods)
+	* [1.2 Carthageによる導入](#by_carthage)
+	* [1.3 手動による導入](#by_manual)
 * **[2. 設定](#setting_sdk)**
 	* [2.1 Frameworkの設定](#setting_framework)
-	* [2.2 ATSの設定](#setting_ats)
+	* [2.2 App Transport Securityの設定](#setting_ats)
 	* [2.2 URLスキームの設定](#setting_urlscheme)
 * **[3. F.O.X SDKのアクティベーション](#activate_sdk_into_app)**
-	* [3.1 Frameworkをimport](#activate_import)
+	* [3.1 Frameworkのインポート](#activate_import)
 	* [3.1 コンフィギュレーション](#activate_config)
 * **[4. インストール計測の実装](#tracking_install)**
 	* [インストール計測の詳細](./doc/track_install/README.md)
@@ -57,7 +57,7 @@ F.O.X SDKをアプリケーションに導入することで、以下の機能�
 
 <div id="by_cocoapods"></div>
 
-### 1.1 CocoaPodsによって導入する場合
+### 1.1 CocoaPodsによる導入
 
 下記のようにPodfileファイルを更新してください。
 * **iOS objective-cで開発する場合**
@@ -106,7 +106,7 @@ pod "FOXSDKTvDy", "<VERSION>"
 
 <div id="by_carthage"></div>
 
-### 1.2 Carthageによって導入する場合
+### 1.2 Carthageによる導入
 
 Cartfileファイルに下記の設定を追加してください。
 ```
@@ -117,7 +117,7 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 
 <div id="by_manual"></div>
 
-### 1.3 マニュアル導入する場合
+### 1.3 手動による導入
 
 [https://github.com/cyber-z/public_fox_ios_sdk/releases](https://github.com/cyber-z/public_fox_ios_sdk/releases)から`FOXSDK_iOS_static_<VERSION>.zip`をダウンロードして展開し、`FOXSDK.framework`ファイルをXcodeプロジェクトに組み込んでください。
 
@@ -177,7 +177,7 @@ Cookieインストール計測とリエンゲージメント計測を行うた�
 
 <div id="activate_import"></div>
 
-### 3.1 フレームワークをimportする
+### 3.1 Frameworkのインポート
 
 APIを使用するため下記importを追加してください。
 
