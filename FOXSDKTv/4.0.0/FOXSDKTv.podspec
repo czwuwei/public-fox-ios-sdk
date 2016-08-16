@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.author           = "CyberZ inc."
 
   s.platform     = :tvos, "9.0"
-  s.source           = {:http => "https://github.com/czwuwei/public-fox-ios-sdk/releases/download/#{s.version}/FOXSDK_tvOS_static_#{s.version}.zip"}
+  s.source           = {:http => "https://github.com/cyber-z/public-fox-ios-sdk/releases/download/#{s.version}/FOXSDK_tvOS_static_#{s.version}.zip"}
   s.vendored_frameworks = "FOXSDK_tvOS_static_#{s.version}/FOXSDK.framework"
 
   s.frameworks = "Foundation", "Security", "AdSupport", "SystemConfiguration"
