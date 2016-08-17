@@ -58,13 +58,8 @@ FOXViewListingEvent* event = [[FOXViewListingEvent alloc] initWithLtvId:00000];
 > CriteoアカウントIDが同一アプリで異なる場合は入力。
 > <br/>@param `partnerId` CriteoアカウントID
 
-4.
-```objc
--(void) addProductById:(nonnull NSString*) productId
-        itemLocationId:(nullable NSString*) itemLocationId
-                 price:(double) price
-              quantity:(NSUInteger) quantity;
-```
+4. `-(void) addProductById:(nonnull NSString*) productId itemLocationId:(nullable NSString*) itemLocationId price:(double) price quantity:(NSUInteger) quantity;
+`
 > 閲覧した商品の情報を指定する場合に使用します。
 > <br/>@param `productId` 商品ID
 > <br/>@param `itemLocationId` ロケーションID(商品の広告を特定の場所や地域に訴求したい場合に設定)

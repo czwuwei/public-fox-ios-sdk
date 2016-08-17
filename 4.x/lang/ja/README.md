@@ -121,7 +121,7 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 
 > ※ 既にアプリケーションにSDKが導入されている場合には、[最新バージョンへのアップデートについて](./doc/update/README.md)をご参照ください。
 
-> * tvOSの場合`FOXSDK_tvOS_static_<VERSION>.zip`をダウンロードしてください。導入手順はiOSと同じです。
+> ※ tvOSの場合`FOXSDK_tvOS_static_<VERSION>.zip`をダウンロードしてください。導入手順はiOSと同じです。
 
 
 <div id="setting_sdk"></div>
@@ -248,7 +248,7 @@ F.O.X SDKではiOS9からリリースされた新しいWebView形式である `S
 
 <div id="tracking_reengagement_scheme"></div>
 
-### 5.1 カスタマイズURL Schemeによって計測
+### 5.1 カスタマイズURL Schemeによる計測
 
 リエンゲージメント広告の計測（URLスキーム経由の起動を計測）するために、`UIApplicationDelegate`の`openURL`メソッドに`[FOXTrack handleOpenURL:url]`を実装します。
 
@@ -265,7 +265,7 @@ sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id
 
 <div id="tracking_reengagement_ulink"></div>
 
-### 5.2 Universal Linkによって計測
+### 5.2 Universal Linkによる計測
 
 Universal Link対応の場合、`continueUserActivity`メソッドに [5.1](#tracking_reengagement_scheme) と同じ`[FOXTrack handleOpenURL:url]`を実装します。
 
@@ -314,8 +314,6 @@ restorationHandler:(void (^)(NSArray *restorableObjects)) restorationHandler {
 
 }
 ```
-
-sendStartSessionは必ず上記二カ所に実装を行ってください。
 
 <div id="tracking_other_event"></div>
 

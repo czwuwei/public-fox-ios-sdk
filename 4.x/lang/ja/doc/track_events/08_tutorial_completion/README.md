@@ -1,4 +1,4 @@
-# TutorialCompletion(チュートリアル完了)イベント実装
+# Tutorial(チュートリアル完了)イベント実装
 
 チュートリアルイベントが完了したタイミングで、下記に従ってアクセス解析のイベント計測機能を実装ください。
 
@@ -39,7 +39,7 @@ FOXTutorialEvent* event = [[FOXTutorialEvent alloc] initWithLtvId:00000];
 > <br/>@param `value` value
 > <br/>@param `key` key
 
-### CompleteTutorialEvent API
+### Instance Methods
 
 1. `-(void) setItemId:(nonnull NSString*) itemId`
 > アイテムIDを指定する場合に使用します。addProductメソッドを使用する場合は呼び出さなくて結構です。

@@ -53,15 +53,14 @@ FOXViewListingEvent* event = [[FOXViewListingEvent alloc] initWithLtvId:00000];
 > アイテムIDを指定する場合に使用します。addProductメソッドを使用する場合は呼び出さなくて結構です。
 > <br/>@param `itemId` アイテムID
 
-2.
-```objc
+2.`
 -(void) addTrackInfoByEventLabel:(nonnull NSString*) eventLabel
                       eventField:(double) eventField
                        mainLevel:(double) mainLevel
                         subLevel:(double) subLevel
                      description:(nullable NSString*) description
                         dateType:(nonnull NSString*) dateType
-```
+`
 > Levelの詳細情報を追加する
 > <br/>@param `eventLabel` ゲーム内のイベント名を指定する場合に使用します。
 > <br/>@param `eventField` Chartboostと連携を行う場合に必須となります。詳細は[Chartboost]へ(http://partners.chartboost.com/#general-event-tracking-information)
