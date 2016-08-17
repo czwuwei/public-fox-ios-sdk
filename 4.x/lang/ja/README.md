@@ -61,15 +61,14 @@ F.O.X SDKをアプリケーションに導入することで、以下の機能�
 
 下記のようにPodfileファイルを更新してください。
 * **iOS objective-cで開発する場合**
-
 ```ruby
 # 下記の一行をPodfileの一番最初に追加してください
 source "https://github.com/cyber-z/public-fox-ios-sdk.git"
 
 # 下記を指定したいターゲットに追加してください
 pod "FOXSDK", "<VERSION>"
-
 ```
+
 * **tvOS objective-cで開発する場合**
 ```ruby
 # 下記の一行をPodfileの一番最初に追加してください
@@ -100,8 +99,6 @@ use_frameworks!
 
 pod "FOXSDKTvDy", "<VERSION>"
 ```
-
-<br />
 > ※ `<VERSION>`は指定したいリリースバージョン、4.0.0以上です。
 
 <div id="by_carthage"></div>
@@ -113,6 +110,7 @@ Cartfileファイルに下記の設定を追加してください。
 github "cyber-z/public-fox-ios-sdk" == <VERSION>
 ```
 > ※ `<VERSION>`は指定したい4.0.0以上のリリースバージョンです。
+
 > ※ Carthageの場合Target VersionはiOS 8.0以上に指定する必要となります。
 
 <div id="by_manual"></div>
@@ -122,6 +120,7 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 [https://github.com/cyber-z/public_fox_ios_sdk/releases](https://github.com/cyber-z/public_fox_ios_sdk/releases)から`FOXSDK_iOS_static_<VERSION>.zip`をダウンロードして展開し、`FOXSDK.framework`ファイルをXcodeプロジェクトに組み込んでください。
 
 > ※ 既にアプリケーションにSDKが導入されている場合には、[最新バージョンへのアップデートについて](./doc/update/README.md)をご参照ください。
+
 > * tvOSの場合`FOXSDK_tvOS_static_<VERSION>.zip`をダウンロードしてください。導入手順はiOSと同じです。
 
 
@@ -159,7 +158,7 @@ NSExceptionDomains|Dictionary|ATSの例外を指定するディクショナリ�
 NSExceptionAllowsInsecureHTTPLoads|Boolean|YES を指定してくださいATSの例外とします。
 NSIncludesSubdomains|Boolean|YES を指定しATSの例外設定をサブドメインにも適用させます。
 
-![ATS設定](./doc/config_plist/img06.png)
+![ATS設定](./img_setting_ats.png)
 
 <div id="setting_urlscheme"></div>
 
@@ -168,6 +167,7 @@ NSIncludesSubdomains|Boolean|YES を指定しATSの例外設定をサブドメ�
 Cookieインストール計測とリエンゲージメント計測を行うため、カスタマイズURL schemeの設定を必ず追加してください。
 
 > ※ 環境によっては、URLスキームの大文字小文字が判別されないことにより正常に URLスキームの遷移が行えない場合があります。URLスキームは全て小文字の英数字を用いて設定を行ってください。
+
 > ※ 他アプリと衝突しないためリバースドメイン(例 _`jp.co.company.product`_ )の使用がおすすめです。
 
 
@@ -223,6 +223,7 @@ F.O.X SDKではiOS9からリリースされた新しいWebView形式である `S
 ```
 
 > ※ ２回目以降、onLaunchメソッドが呼び出されても動作することはありません。
+
 > ※ onLaunchメソッドにはオプションを指定することも可能です。詳細は[インストール計測の詳細](./doc/track_install/README.md)をご確認ください。
 
  * **Fingerprinting計測時の注意事項**

@@ -34,7 +34,10 @@
 > 設定した情報をSDK内部で反映する。注意、最初の一回呼ばれる時にだけ設定値が保存される。
 
 #### Static Methods
-1. `+(nullable FOXConfig*) configWithAppId:(NSUInteger) appId salt:(nonnull NSString*) salt appKey:(nonnull NSString*) appKey;`
+1.
+```objc
++(nullable FOXConfig*) configWithAppId:(NSUInteger) appId salt:(nonnull NSString*) salt appKey:(nonnull NSString*) appKey;
+```
 > コンストラクタメソッド、必須Propertiesは初期化と同時にセットされます。
 > <br/>@param `appId` 管理画面で発行されたアプリID
 > <br/>@param `salt` 管理画面で発行されたアプリソルト
@@ -71,14 +74,14 @@
 
 7. `+(void) setUserInfo:(nonnull NSDictionary*) userInfo`
 > 全てのイベントに共有される計測する際のユーザー情報・属性等を設定する
-> <br/>@param userInfo JSON形式の設定する情報・属性
+> <br/>@param `userInfo` JSON形式の設定する情報・属性
 
 8. `+(BOOL) isConversionCompleted`
 > インストール計測が完成しているかをbooleanで返す
 
 9. `+(void) trackEventByBrowser:(nonnull NSString*) redirectURL`
 > イベントタグを設置した外部のWebページのイベント計測
-> <br/>@param redirectURL イベントタグを埋め込んだ外部のWebページのURL
+> <br/>@param `redirectURL` イベントタグを埋め込んだ外部のWebページのURL
 
 
 <div id="foxtrackoption"></div>
@@ -116,17 +119,17 @@
 #### Instance Methods
 1. `-(nullable instancetype) initWithEventName:(nonnull NSString*) eventName`
 > 初期化メソッド、イベント名を指定する。
-> <br/>@param eventName イベント名
+> <br/>@param `eventName` イベント名
 
 2. `-(nullable instancetype) initWithEventName:(nonnull NSString*) eventName andLtvId:(NSUInteger) ltvId`
 > 初期化メソッド、イベント名とLTV IDを指定する。
-> <br/>@param eventName イベント名
-> <br/>@param ltvId 管理画面で発行されたLTV ID
+> <br/>@param `eventName` イベント名
+> <br/>@param `ltvId` 管理画面で発行されたLTV ID
 
 3. `-(void) addExtraValue:(nonnull NSString*) value forKey:(nonnull NSString*) key`
 > 任意のKey-Value情報を追加する
-> <br/>@param value Value
-> <br/>@param key Key
+> <br/>@param `value` Value
+> <br/>@param `key` Key
 
 #### Static Methods
 1.
@@ -137,7 +140,7 @@
                                             currency:(nullable NSString*) currency;
 ```
 > 購入イベントを作成するヘルパーメソッド
-> <br/>@param eventName イベント名
-> <br/>@param ltvId 管理画面で発行されたLTV ID
-> <br/>@param price 単価
-> <br/>@param currency 単価の通貨
+> <br/>@param `eventName` イベント名
+> <br/>@param `ltvId` 管理画面で発行されたLTV ID
+> <br/>@param `price` 単価
+> <br/>@param `currency` 単価の通貨

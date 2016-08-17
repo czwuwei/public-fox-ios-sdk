@@ -7,7 +7,7 @@
 ## 1. イベント計測拡張プラグインモジュールのインポート
 
 アプリ内の各種イベントの計測を補助するためのサポートライブラリをインポートすることで、イベント計測の実装が容易になります。
-サポートライブラリでは[`FoxEvent`](../../sdk_api/README.md#foxevent)クラスを拡張し、各種イベント毎のクラスを提供しています。
+サポートライブラリでは[`FOXEvent`](../sdk_api/README.md#foxevent)クラスを拡張し、各種イベント毎のクラスを提供しています。
 
 ### 1.1 CocoaPods
 
@@ -42,7 +42,7 @@ pod "FOXSDKExDy", "<VERSION>"
 ### 1.2 Carthage
 ```
 # 下記のをCartfileに追加してください
-github "cyber-z/public-fox-ios-sdk/FOXExtension" == 4.0.0
+github "cyber-z/public-fox-ios-sdk" == 4.0.0
 ```
 
 <div id="supported_events"></div>

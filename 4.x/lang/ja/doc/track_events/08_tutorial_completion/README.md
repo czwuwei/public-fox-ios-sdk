@@ -6,7 +6,7 @@
 
 
 ```objc
-#import "FOXExtension.h"
+#import <FOXExtension/FOXExtension.h>
 
 FOXTutorialEvent* event = [[FOXTutorialEvent alloc] initWithLtvId:00000];
 [event setUserId:@"USER_A001"];
@@ -22,28 +22,28 @@ FOXTutorialEvent* event = [[FOXTutorialEvent alloc] initWithLtvId:00000];
 
 2. `-(nullable instancetype) initWithLtvId:(NSUInteger) ltvId`
 > デフォルトのイベント名と指定したltvIdを使うコンストラクタ
-> <br/>@param ltvId 指定したいLTV ID
+> <br/>@param `ltvId` 指定したいLTV ID
 
 3. `-(nullable instancetype) initWithEventName:(NSString*)eventName andLtvId:(NSUInteger) ltvId`
 > 指定したイベント名と指定した LTV IDを使うコンストラクタ
-> <br/>@param eventName 指定したいイベント名
-> <br/>@param ltvId 指定したいLTV ID
+> <br/>@param `eventName` 指定したいイベント名
+> <br/>@param `ltvId` 指定したいLTV ID
 
 #### Common Methods
 1. `-(void) setUserId:(nonnull NSString*) userId`
 > ユーザーIDを指定する場合に使用します。
-> <br/>@param userId 指定したいユーザーID
+> <br/>@param `userId` 指定したいユーザーID
 
 2. `-(void) putJsonValue:(nonnull id) value forKey:(nonnull NSString*) key`
 > 任意のJSON Key-Valueを追加する場合に使用します。
-> <br/>@param value value
-> <br/>@param key key
+> <br/>@param `value` value
+> <br/>@param `key` key
 
 ### CompleteTutorialEvent API
 
 1. `-(void) setItemId:(nonnull NSString*) itemId`
 > アイテムIDを指定する場合に使用します。addProductメソッドを使用する場合は呼び出さなくて結構です。
-> <br/>@param itemId アイテムID
+> <br/>@param `itemId` アイテムID
 
 ### 連携対応済み媒体
 
