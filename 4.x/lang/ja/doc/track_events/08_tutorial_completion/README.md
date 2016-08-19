@@ -39,7 +39,7 @@ FOXTutorialEvent* event = [[FOXTutorialEvent alloc] initWithLtvId:00000];
 > <br/>@param `value` value
 > <br/>@param `key` key
 
-### Instance Methods
+#### Instance Methods
 
 1. `-(void) setItemId:(nonnull NSString*) itemId`
 > アイテムIDを指定する場合に使用します。addProductメソッドを使用する場合は呼び出さなくて結構です。

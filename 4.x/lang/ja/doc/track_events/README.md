@@ -51,11 +51,11 @@ github "cyber-z/public-fox-ios-sdk" == 4.0.0
 > #### 1. [ViewToppageイベント](./01_view_toppage/README.md)
 > #### 2. [ViewListingイベント](./02_view_listing/README.md)
 > #### 3. [ViewProductイベント](./03_view_product/README.md)
-> #### 4. [ViewBasketイベント](./04_view_basket/README.md)
-> #### 5. [TrackTransactionイベント](./05_track_transaction/README.md)
+> #### 4. [AddToCartイベント](./04_view_basket/README.md)
+> #### 5. [Purchaseイベント](./05_track_transaction/README.md)
 > #### 6. [AchieveLevelイベント](./06_achieve_level/README.md)
 > #### 7. [ViewCategoryイベント](./07_view_category/README.md)
-> #### 8. [TutorialCompletionイベント](./08_tutorial_completion/README.md)
+> #### 8. [Tutorialイベント](./08_tutorial_completion/README.md)
 > #### 9. [Searchイベント](./09_search/README.md)
 
 ---
