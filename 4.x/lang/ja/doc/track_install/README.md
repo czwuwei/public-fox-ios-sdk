@@ -15,7 +15,7 @@
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
 	// ...
 	[[FOXConfig configWithAppId:0000 salt:@"xxxxx" appKey:@"xxxx"] activate];
-	[FOXConfig onLaunch];
+	[FOXTrack onLaunch];
 	// ...
 	return YES; // openURL:メソッドをコールさせるため必ずYESを返してください
 }
@@ -42,13 +42,13 @@
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
 	// after activate
 	FOXTrackOption* option = [FOXTrackOption new];
-	option.redirectURL = "myapp://top";
-	option.buid = "USER ID"
+	option.redirectURL = @"myapp://top";
+	option.buid = @"USER ID";
 	option.optout = YES;
 	option.onTrackFinished = ^ {
 		NSLog(@"callback after tracking finished");
 	}
-	[FOXConfig onLaunch:option];
+	[FOXTrack onLaunchWithOption:option];
 	// ...
 	return YES; // openURL:メソッドをコールさせるため必ずYESを返してください
 }

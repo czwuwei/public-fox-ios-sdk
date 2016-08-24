@@ -206,7 +206,6 @@ F.O.X SDKのアクティベーションを行うため、[`FOXConfig`](./doc/sdk
 ## 4. インストール計測の実装
 
 初回起動のインストール計測を実装することで、広告の効果測定を行うことができます。
-また、iOS9より初回起動時のブラウザ起動からアプリに戻る際に、ダイアログが出力されます。
 F.O.X SDKではiOS9からリリースされた新しいWebView形式である `SFSafariViewController` を初回起動時に起動させ計測することで、バックグラウンド表示によるユーザービリティの低下を防止することが出来ます。
 
 以下の[`[FOXTrack onLaunch]`](./doc/sdk_api/README.md#foxtrack)メソッドをアプリケーションの起動時に`didFinishLaunchingWithOptions`メソッド内に実装します。
@@ -216,9 +215,17 @@ F.O.X SDKではiOS9からリリースされた新しいWebView形式である `S
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
 	// ...
 	[[FOXConfig configWithAppId:0000 salt:@"xxxxx" appKey:@"xxxx"] activate];
-	[FOXConfig onLaunch];
+	[FOXTrack onLaunch];
 	// ...
 	return YES; // openURL:メソッドをコールさせるため必ずYESを返してください
+}
+
+-(BOOL) application:(UIApplication *) application openURL:(nonnull NSURL *) url
+sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id) annotation {
+	// ...
+    [FOXTrack handleOpenURL:url]; // Cookie計測或はリエンゲージメント計測を利用する場合
+	// ...
+    return YES;
 }
 ```
 

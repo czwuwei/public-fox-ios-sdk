@@ -9,6 +9,7 @@
 アプリ内の各種イベントの計測を補助するためのサポートライブラリをインポートすることで、イベント計測の実装が容易になります。
 サポートライブラリでは[`FOXEvent`](../sdk_api/README.md#foxevent)クラスを拡張し、各種イベント毎のクラスを提供しています。
 
+## 1. 導入
 ### 1.1 CocoaPods
 
 下記のようにPodfileファイルを更新してください。
@@ -21,8 +22,8 @@ source "https://github.com/cyber-z/public-fox-ios-sdk.git"
 # 下記を指定したいターゲットに追加してください
 pod "FOXSDK", "<VERSION>"
 pod "FOXSDKEx", "<VERSION>"
-
 ```
+
 * **iOS Swiftでdynamic frameworkを利用する場合**
 ```ruby
 # 下記の一行をPodfileの一番最初に追加してください
@@ -43,6 +44,18 @@ pod "FOXSDKExDy", "<VERSION>"
 ```
 # 下記のをCartfileに追加してください
 github "cyber-z/public-fox-ios-sdk" == 4.0.0
+```
+
+## 2. import
+拡張イベントを利用するため、下記のimportを追加する。
+```objc
+#import <FOXExtension/FOXExtension.h>
+```
+
+### CocoaPodsの場合
+`use_frameworks`を使用しない場合、headerファイル毎のimportが必要になりますので、下記のimportを追加する。
+```objc
+#import "FOXExtension.h"
 ```
 
 <div id="supported_events"></div>
