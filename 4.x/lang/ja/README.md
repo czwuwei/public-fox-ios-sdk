@@ -346,7 +346,7 @@ event.buid = @"User ID";
 FOXEvent* event = [[FOXEvent alloc] initWithEventName:@"purchase"];
 event.price = 99;
 event.currency = @"JPY";
-event.sku = @"itemId"
+event.sku = @"itemId";
 [FOXTrack sendEvent:event];
 ```
 
@@ -374,9 +374,9 @@ F.O.Xでは、上記のうちCFBundleShortVersionStringの値を管理の目的�
 
 ### 9.2. 期待した広告経由のインストール数よりもレポートの数字が低い
 
-インストール計測の`onLaunch:`が起動直後ではない箇所に実装されている場合に、その地点に到達する前に離脱したユーザーは計測漏れが発生します。
+インストール計測の`onLaunch`か`onLaunchWithOption:`が起動直後ではない箇所に実装されている場合に、その地点に到達する前に離脱したユーザーは計測漏れが発生します。
 
-`onLaunch:`は、特に理由がない限りは`application:didFinishLaunchingWithOptions:`内に実装してください。それ以外の箇所に実装された場合にはインストール数が正確に計測できない場合があります。
+`onLaunch`か`onLaunchWithOption:`は、特に理由がない限りは`application:didFinishLaunchingWithOptions:`内に実装してください。それ以外の箇所に実装された場合にはインストール数が正確に計測できない場合があります。
 
 `application:didFinishLaunchingWithOptions:`に実装していない状態でインストール成果型の広告を実施する際には、必ず広告代理店もしくは媒体社の担当にその旨を伝えてください。正確に計測が行えない状態でインストール成果型の広告を実施された際には、計測されたインストール数以上の広告費の支払いを求められる恐れがあります。
 

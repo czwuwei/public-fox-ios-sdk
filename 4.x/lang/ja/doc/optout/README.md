@@ -6,7 +6,7 @@
 // 初回起動のインストール計測
 FOXTrackOption* option = [FoxTrackOption new];
 option.optout = YES;
-[FOXTrack onLaunch:option];
+[FOXTrack onLaunchWithOption:option];
 ```
 
 ---
