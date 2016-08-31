@@ -181,8 +181,13 @@ Cookieインストール計測とリエンゲージメント計測を行うた�
 
 APIを使用するため下記importを追加してください。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 #import <FOXSDK/FOXSDK.h>
+```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+import FOXSDK
 ```
 
 <div id="activate_config"></div>
@@ -191,10 +196,19 @@ APIを使用するため下記importを追加してください。
 
 F.O.X SDKのアクティベーションを行うため、[`FOXConfig`](./doc/sdk_api/README.md#foxconfig)クラスのコンフィギュレーション設定をdidFinishLaunchingWithOptionsメソッド内に実装します。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
 	// ...
 	[[FOXConfig configWithAppId:0000 salt:@"xxxxx" appKey:@"xxxx"] activate];
+	// ...
+}
+```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	// ...
+	FOXConfig.init(appId:0000,salt:"xxxxx",appKey:"xxxxx")!.activate()
 	// ...
 }
 ```
@@ -211,6 +225,7 @@ F.O.X SDKではiOS9からリリースされた新しいWebView形式である `S
 以下の[`[FOXTrack onLaunch]`](./doc/sdk_api/README.md#foxtrack)メソッドをアプリケーションの起動時に`didFinishLaunchingWithOptions`メソッド内に実装します。
 また`SFSafariViewController`でのインストール計測を行った後に`SFSafariViewController`を閉じるため、`-(BOOL)application:openURL:sourceApplication:annotation:`メソッド内、`[FOXTrack handleOpenURL:url]`を実装を行ってください。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
 	// ...
@@ -228,6 +243,20 @@ sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id
     return YES;
 }
 ```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	// ...
+	FOXConfig.init(appId:0000,salt:"xxxxx",appKey:"xxxxx")!.activate()
+	FOXTrack.onLaunch()
+	// ...
+	return true
+}
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        FOXTrack.handleOpenURL(url)
+        return true
+    }
+```
 
 > ※ ２回目以降、onLaunchメソッドが呼び出されても動作することはありません。
 
@@ -238,13 +267,22 @@ sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id
  Fingerprinting計測はUIWebViewを使用しており、UserAgentを独自のカスタマイズを行っている場合正常に計測することが出来なくなります。
  下記のように計測処理が完了した後にUIWebViewのUserAgentを独自の文字列にカスタマイズを行います。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
  ```objc
- FOXTrackOption* option = [FOXTrackOption new];
- option.onTrackFinished = ^() {
+ FOXTrackOption* foxOption = [FOXTrackOption new];
+ foxOption.onTrackFinished = ^() {
      NSLog(@"callback after tracking finished");
      // set customize UserAgent
  };
- [FOXTrack onLaunchWithOption:option];
+ [FOXTrack onLaunchWithOption:foxOption];
+ ```
+ ![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+ ```Swift
+ let foxOption: FOXTrackOption = FOXTrackOption.init()
+ foxOption.onTrackFinished = {
+      print("callback after tracking finished")
+	}
+  FOXTrack.onLaunchWithOption(foxOption)
  ```
 
 [インストール計測の詳細](./doc/track_install/README.md)
@@ -259,6 +297,7 @@ sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id
 
 リエンゲージメント広告の計測（URLスキーム経由の起動を計測）するために、`UIApplicationDelegate`の`openURL`メソッドに`[FOXTrack handleOpenURL:url]`を実装します。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 -(BOOL) application:(UIApplication *) application openURL:(nonnull NSURL *) url
 sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id) annotation {
@@ -268,6 +307,17 @@ sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id
     return YES;
 }
 ```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+	// ...
+    FOXTrack.handleOpenURL(url)
+		// ...
+    return true
+}
+```
+
+
 > ※ リエンゲージメント広告の計測を行うためにはInfo.plistに定義されているカスタムURLスキームが設定されていることが前提となります。
 
 <div id="tracking_reengagement_ulink"></div>
@@ -276,6 +326,7 @@ sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id
 
 Universal Link対応の場合、`continueUserActivity`メソッドに [5.1](#tracking_reengagement_scheme) と同じ`[FOXTrack handleOpenURL:url]`を実装します。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 -(BOOL) application:(UIApplication *) application continueUserActivity:(NSUserActivity *) userActivity
 restorationHandler:(void (^)(NSArray *restorableObjects)) restorationHandler {
@@ -285,6 +336,16 @@ restorationHandler:(void (^)(NSArray *restorableObjects)) restorationHandler {
     return YES;
 }
 ```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+	// ...
+    FOXTrack.handleOpenURL(url)
+		// ...
+    return true
+}
+```
+
 > ※ カスタマイズURL SchemeとUniversal Link 両方対応の場合、両方の実装が必要です。
 
 [リエンゲージ計測を行う場合のテストの手順](./doc/reengagement_test/README.md)
@@ -301,8 +362,8 @@ restorationHandler:(void (^)(NSArray *restorableObjects)) restorationHandler {
 
 ※バックグラウンドフェッチを利用している場合、バックグラウンド起動時にOS側がapplication:didFinishLaunchingWithOptions:をコールしています。バックグラウンド時は起動計測F.O.Xメソッドが呼ばれないようにapplicationStateにて状態判定をおこなってください。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objective-c
-
 - (BOOL)application:(UIApplication *)application
    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -312,13 +373,27 @@ restorationHandler:(void (^)(NSArray *restorableObjects)) restorationHandler {
         //バックグラウンド時は起動計測が呼ばれないようにする
         [FOXTrack startSession];
     }
-
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
 
     [FOXTrack startSession];
+}
+```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+		if application.applicationState == UIApplicationState.Background {
+				//バックグラウンド時の処理
+		} else {
+				//バックグラウンド時は起動計測が呼ばれないようにする
+				FOXTrack.startSession()
+		}
+}
+func applicationDidEnterBackground(application: UIApplication) {
+
+		FOXTrack.startSession()
 }
 ```
 
@@ -329,11 +404,17 @@ restorationHandler:(void (^)(NSArray *restorableObjects)) restorationHandler {
 会員登録、チュートリアル突破、課金など任意の成果地点にイベント計測を実装することで、流入元広告のLTVを測定することができます。<br>イベント計測が不要の場合には、本項目の実装を省略できます。
 
 **[チュートリアルイベントの計測例]**
-
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 FOXEvent* event = [[FOXEvent alloc] initWithEventName:@"tuturial" andLtvId:0000];
 event.buid = @"User ID";
 [FOXTrack sendEvent:event];
+```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let event:FOXEvent = FOXEvent.init(eventName:"tuturial", andLtvId:0000)!
+event.buid = "User ID"
+FOXTrack.sendEvent(event)
 ```
 
 > イベント計測を行うためには、各成果地点を識別する`成果地点ID`を指定する必要があります。[`FOXEvent`](./doc/sdk_api/README.md#foxevent)クラスのコンストラクタの引数にイベント名と発行されたIDを指定してください。
@@ -342,12 +423,21 @@ event.buid = @"User ID";
 
 課金計測を行う場合には、課金が完了した箇所で以下のように課金額と通貨コードを指定してください。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 FOXEvent* event = [[FOXEvent alloc] initWithEventName:@"purchase"];
 event.price = 99;
 event.currency = @"JPY";
 event.sku = @"itemId";
 [FOXTrack sendEvent:event];
+```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let event:FOXEvent = FOXEvent.init(eventName:"purchase")!
+event.price = 99
+event.currency = "JPY"
+event.sku = "itemId"
+FOXTrack.sendEvent(event)
 ```
 
 currencyの指定には[ISO 4217](http://ja.wikipedia.org/wiki/ISO_4217)で定義された通貨コードを指定してください。

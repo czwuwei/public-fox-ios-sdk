@@ -11,6 +11,7 @@
 プロジェクトのソースコードを編集し、アプリケーションの起動時に`didFinishLaunchingWithOptions`メソッド内、次の通り実装を行ってください。
 また`SFSafariViewController`でのインストール計測を行った後に`SFSafariViewController`を閉じるため、`-(BOOL)application:openURL:sourceApplication:annotation:`メソッド内、`[FOXTrack handleOpenURL:url]`を実装を行ってください。
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
 	// ...
@@ -27,6 +28,22 @@
 	return YES;
 }
 ```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	// ...
+	FOXConfig.init(appId:0000,salt:"xxxxx",appKey:"xxxxx")!.activate()
+	FOXTrack.onLaunch()
+	// ...
+}
+
+func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+
+        FOXTrack.handleOpenURL(url)
+
+        return true
+}
+```
 
 > ※ 引数を指定せず`onLaunch`メソッドを呼び出すと、F.O.X管理画面上での設定内容が優先されます。Cookie計測の際のリダイレクト先URLを指定する場合は、以降の説明をご確認ください。
 
@@ -38,19 +55,34 @@
 
 インストール計測が完了したことをコールバックで受け取りたい場合、特定のURLヘ遷移させる場合や、アプリケーションで動的にURLを生成したい場合には、以下の[FOXTrackOption](../sdk_api/README.md#foxtrackoption)クラスを使用します。<br>
 
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 -(BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
 	// after activate
-	FOXTrackOption* option = [FOXTrackOption new];
-	option.redirectURL = @"myapp://top";
-	option.buid = @"USER ID";
-	option.optout = YES;
-	option.onTrackFinished = ^ {
+	FOXTrackOption* foxOption = [FOXTrackOption new];
+	foxOption.redirectURL = @"myapp://top";
+	foxOption.buid = @"USER ID";
+	foxOption.optout = YES;
+	foxOption.onTrackFinished = ^ {
 		NSLog(@"callback after tracking finished");
 	}
-	[FOXTrack onLaunchWithOption:option];
+	[FOXTrack onLaunchWithOption:foxOption];
 	// ...
 	return YES; // openURL:メソッドをコールさせるため必ずYESを返してください
+}
+```
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+  let foxOption: FOXTrackOption = FOXTrackOption.init()
+  foxOption.redirectURL = "myapp://top"
+  foxOption.buid = "USER ID"
+  foxOption.optout = true
+  foxOption.onTrackFinished = {
+    print("callback after tracking finished")
+  }
+  FOXTrack.onLaunchWithOption(foxOption)
 }
 ```
 
