@@ -242,9 +242,9 @@ F.O.X SDKではiOS9からリリースされた新しいWebView形式である `S
 -(BOOL) application:(UIApplication *) application openURL:(nonnull NSURL *) url
 sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id) annotation {
 	// ...
-    [FOXTrack handleOpenURL:url]; // Cookie計測或はリエンゲージメント計測を利用する場合
+  [FOXTrack handleOpenURL:url]; // Cookie計測或はリエンゲージメント計測を利用する場合
 	// ...
-    return YES;
+  return YES;
 }
 ```
 ![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
@@ -257,9 +257,11 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 	return true
 }
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        FOXTrack.handleOpenURL(url)
-        return true
-    }
+	// ...
+  FOXTrack.handleOpenURL(url)
+	// ...
+  return true
+}
 ```
 
 > ※ ２回目以降、onLaunchメソッドが呼び出されても動作することはありません。
@@ -285,8 +287,9 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
  let foxOption: FOXTrackOption = FOXTrackOption.init()
  foxOption.onTrackFinished = {
       print("callback after tracking finished")
-	}
-  FOXTrack.onLaunchWithOption(foxOption)
+			// set customize UserAgent
+}
+FOXTrack.onLaunchWithOption(foxOption)
  ```
 
 [インストール計測の詳細](./doc/track_install/README.md)
@@ -316,7 +319,7 @@ sourceApplication:(nullable NSString *) sourceApplication annotation:(nonnull id
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
 	// ...
     FOXTrack.handleOpenURL(url)
-		// ...
+	// ...
     return true
 }
 ```
@@ -388,12 +391,12 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
 ```Swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-		if application.applicationState == UIApplicationState.Background {
-				//バックグラウンド時の処理
-		} else {
-				//バックグラウンド時は起動計測が呼ばれないようにする
-				FOXTrack.startSession()
-		}
+	if application.applicationState == UIApplicationState.Background {
+		//バックグラウンド時の処理
+	} else {
+		//バックグラウンド時は起動計測が呼ばれないようにする
+		FOXTrack.startSession()
+	}
 }
 func applicationDidEnterBackground(application: UIApplication) {
 
@@ -408,6 +411,7 @@ func applicationDidEnterBackground(application: UIApplication) {
 会員登録、チュートリアル突破、課金など任意の成果地点にイベント計測を実装することで、流入元広告のLTVを測定することができます。<br>イベント計測が不要の場合には、本項目の実装を省略できます。
 
 **[チュートリアルイベントの計測例]**
+
 ![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
 ```objc
 FOXEvent* event = [[FOXEvent alloc] initWithEventName:@"tuturial" andLtvId:0000];
