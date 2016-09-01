@@ -10,6 +10,7 @@ Force Operation X (以下F.O.X)は、スマートフォンにおける広告効�
 	* [1.1 CocoaPodsによる導入](#by_cocoapods)
 	* [1.2 Carthageによる導入](#by_carthage)
 	* [1.3 手動による導入](#by_manual)
+	* [1.4 旧バージョンからのマイグレーション](#by_migration)
 * **[2. 設定](#setting_sdk)**
 	* [2.1 Frameworkの設定](#setting_framework)
 	* [2.2 App Transport Securityの設定](#setting_ats)
@@ -119,7 +120,10 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 
 [https://github.com/cyber-z/public_fox_ios_sdk/releases](https://github.com/cyber-z/public_fox_ios_sdk/releases)から`FOXSDK_iOS_static_<VERSION>.zip`をダウンロードして展開し、`FOXSDK.framework`ファイルをXcodeプロジェクトに組み込んでください。
 
-> ※ 既にアプリケーションにSDKが導入されている場合には、[最新バージョンへのアップデートについて](./doc/update/README.md)をご参照ください。
+<div id="by_migration"></div>
+
+### 1.4 旧バージョンからのマイグレーション
+既にアプリケーションにSDKが導入されている場合には、[最新バージョンへのアップデートについて](./doc/update/README.md)をご参照ください。
 
 > ※ tvOSの場合`FOXSDK_tvOS_static_<VERSION>.zip`をダウンロードしてください。導入手順はiOSと同じです。
 
