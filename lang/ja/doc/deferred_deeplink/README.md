@@ -14,6 +14,7 @@
 
 ### 実装例
 1. **デフォルト処理**
+
 ディープリンクを取得し、ディープリンク先への遷移をSDKが行う例となっています。
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -31,6 +32,7 @@
 
 
 2. **カスタマイズ処理**
+
 1日以内のラストクリックを有効とし、ディープリンクを取得する例となっています。
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
