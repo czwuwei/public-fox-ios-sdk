@@ -13,7 +13,7 @@
 |setDeferredDeeplinkValidDuration:(NSTimeInterval)durationSinceClick<br/>andHandler:^(NSString url)handler|`durationSinceClick` : ラストクリックの有効期間を秒数で指定します。<br/>`handler` : DeeplinkをNSStringとして処理するコールバックに渡します。Deferred Deeplinkを取得に失敗する時urlはnilです。
 
 ### 実装例
-1. **デフォルト処理**
+**1. デフォルト処理**
 
 ディープリンクを取得し、ディープリンク先への遷移をSDKが行う例となっています。
 ```objc
@@ -31,7 +31,7 @@
 ```
 
 
-2. **カスタマイズ処理**
+**2. カスタマイズ処理**
 
 1日以内のラストクリックを有効とし、ディープリンクを取得する例となっています。
 ```objc
