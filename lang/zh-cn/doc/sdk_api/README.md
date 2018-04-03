@@ -15,7 +15,7 @@
 |debugMode|BOOL|readonly, 是否生成调试日志|
 |webViewTrackingEnabled|BOOL|UIWebView中计测功能是否有效|
 |customizedUserAgentEnabled|BOOL|定制化UserAgent的支持是否有效|
-|offlineMode|BOOL|是否开启线下模式|
+|offlineMode|BOOL|是否开启线下模式, 设定之后无法更改|
 
 #### Instance Methods
 1. `-(void) enableDebugMode`
@@ -29,10 +29,6 @@
 
 ４. `-(void) enableCustomizedUserAgent`
 > 定制化UserAgent的支持是否有效
-
-5. `-(void) enableOfflineMode`
-> 开启线下模式，SDK将停止发送任何信息。一旦开启将无法关闭。
-
 
 #### Static Methods
 

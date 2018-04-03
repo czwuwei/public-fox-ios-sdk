@@ -150,6 +150,7 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 <tr><td>SystemConfiguration.framework</td><td>Required</td></tr>
 <tr><td>WebKit.framework</td><td>Required</td></tr>
 <tr><td>AdSupport.framework</td><td>Optional</td></tr>
+<tr><td>CoreTelephony.framework</td><td>Optional</td></tr>
 </table>
 
 <div id="setting_ats"></div>

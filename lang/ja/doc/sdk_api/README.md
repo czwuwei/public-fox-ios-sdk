@@ -15,7 +15,7 @@
 |debugMode|BOOL|readonly, デバッグログの出力有無|
 |webViewTrackingEnabled|BOOL|UIWebViewで計測する機能有効の有無|
 |customizedUserAgentEnabled|BOOL|カスタマイズUserAgentのサポートの有無|
-|offlineMode|BOOL|SDKの送信停止モードの有無|
+|offlineMode|BOOL|SDKの送信停止モードの有無、設定後変更が出来ません。|
 
 #### Instance Methods
 
@@ -30,9 +30,6 @@
 
 ４. `-(void) enableCustomizedUserAgent`
 > カスタマイズUserAgentのサポートを有効にする
-
-5. `-(void) enableOfflineMode`
-> 送信停止モードを有効にする。一度有効にした後変更が出来ません。
 
 
 #### Static Methods

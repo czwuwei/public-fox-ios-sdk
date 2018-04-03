@@ -153,6 +153,7 @@ SDKの動作に必要なXcodeの設定を行います。
 <tr><td>SystemConfiguration.framework</td><td>Required</td></tr>
 <tr><td>WebKit.framework</td><td>Required</td></tr>
 <tr><td>AdSupport.framework</td><td>Optional</td></tr>
+<tr><td>CoreTelephony.framework</td><td>Optional</td></tr>
 </table>
 
 <div id="setting_ats"></div>
@@ -218,6 +219,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 > ※ アクティベーションの実装は必ず全ての計測の前に行わなければなりません。
 
+### 3.3 GDPRなどプライバシー保護対応
+GDPRなど個人プライバシー重視の法案はユーザーのプライバシー情報を収集する前に許諾が必要と定めています。
+SDKがユーザー追跡するに必要な情報をサーバーへ送信しているため、ユーザーの許諾を尊重しなければなりません。
+
+そのため許諾されなかったの場合、必ず`CTYZFoxConfig`.`offlineMode`を`YES`に設定し、全てのSDKの通信を停止さてください。逆に許諾された場合、`NO`を設定し、今後のSDKの通信を全部許可します。設定無しの場合、SDKは設定されるまで通信可と見なして処理します。
 
 <div id="tracking_install"></div>
 
