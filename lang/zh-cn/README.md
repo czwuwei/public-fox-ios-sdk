@@ -216,6 +216,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 > ※ 激活的配置必须在所有计测开始前进行。
 
+### 3.3 线下模式
+设定`CYZFoxConfig.offlineMode`为`YES`可开启线下模式，`NO`关闭线下模式（未设定时默认关闭线下模式）。
+设定将保持生效至删除App。
+- 根据用户许可来设定线下模式是否开启时，请确保在用户许可之后执行`activate`。
+
 
 <div id="tracking_install"></div>
 
