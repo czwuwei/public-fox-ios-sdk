@@ -217,10 +217,30 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 > ※ 激活的配置必须在所有计测开始前进行。
 
 ### 3.3 线下模式
-设定`CYZFoxConfig.offlineMode`为`YES`可开启线下模式，`NO`关闭线下模式（未设定时默认关闭线下模式）。
-设定将保持生效至删除App。
-- 根据用户许可来设定线下模式是否开启时，请确保在用户许可之后执行`activate`。
+开启线下模式功能，可停止F.O.X SDK的所有监测行为。
+设定`CYZFoxConfig.offlineMode`为`YES`开启线下模式，`NO`则关闭线下模式（未设定时默认关闭线下模式）。
 
+- 根据用户许可来设定线下模式是否开启时，请确保在用户许可之后执行`CYZFoxConfig.activate`。
+- `CYZFoxConfig.activate`需要在App每次启动时去执行。
+- 设定将保持生效至App被删除。
+
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
+```objc
+CYZFoxConfig* config = [CYZFoxConfig configWithAppId:0000 salt:@"xxxx" appKey:@"xxxx"];
+if (!hasUserPermission) {
+    config.offlineMode = YES;
+}
+[config activate];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let config = CYZFoxConfig.init(appId: 0000, salt: "xxxx", appKey: "xxxx")
+if !hasUserPermission {
+	config.isOfflineMode = true
+}
+config.activate()
+```
 
 <div id="tracking_install"></div>
 

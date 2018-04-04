@@ -220,9 +220,30 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 > ※ アクティベーションの実装は必ず全ての計測の前に行わなければなりません。
 
 ### 3.3 オフラインモード
-オフラインモードを有効にする場合は、`CTYZFoxConfig`.`offlineMode`を`YES`を、無効にする場合は`NO`を設定してください（未設定の場合、オフラインモードは無効のままです）。
-オフラインモードを設定した場合、アプリをアンイストールするまで設定は反映されます。
-- ユーザ許諾などをもとにオフラインモードの有効無効を設定したい場合、activateの処理はユーザ許諾後に実行してください。
+F.O.X SDKの計測機能を停止しトラッキングを無効化する設定です。
+オフラインモードを有効にする場合は、`CYZFoxConfig.offlineMode`を`YES`を、無効にする場合は`NO`を設定してください（未設定の場合、オフラインモードは無効のままです）。<br/>
+
+- ユーザ許諾などをもとにオフラインモードの有効無効を設定したい場合、`CYZFoxConfig.activate`の処理はユーザ許諾後に実行してください。
+- `CYZFoxConfig.activate`はアプリ起動時に常に呼出必要となります。
+- オフラインモードを設定した場合、アプリをアンイストールするまで設定は反映されます。
+
+![Language](http://img.shields.io/badge/language-Objective–C-blue.svg?style=flat)
+```objc
+CYZFoxConfig* config = [CYZFoxConfig configWithAppId:0000 salt:@"xxxx" appKey:@"xxxx"];
+if (!hasUserPermission) {
+    config.offlineMode = YES;
+}
+[config activate];
+```
+
+![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)
+```Swift
+let config = CYZFoxConfig.init(appId: 0000, salt: "xxxx", appKey: "xxxx")
+if !hasUserPermission {
+	config.isOfflineMode = true
+}
+config.activate()
+```
 
 
 <div id="tracking_install"></div>
