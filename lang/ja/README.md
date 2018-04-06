@@ -118,9 +118,9 @@ github "cyber-z/public-fox-ios-sdk" == <VERSION>
 
 * __4.4.0へマイグレーションの場合__
 
-  4.3.0までは三つのdynamic framework(`CYZFox`, `CYZAdCommon`, `CYZAdUtil`)が導入されるが、
-  4.4.0から`CYZFox.framework`一つとなりました。
-  従って`CYZAdCommon`と`CYZAdUtil`のファイルと設定を手動で削除する作業が必要となります。
+  4.3.0までは3つのdynamic framework(`CYZFox`, `CYZAdCommon`, `CYZAdUtil`)の導入が必要でしたが、
+  4.4.0からは`CYZFox.framework`の1つになりました。
+  そのため`CYZAdCommon`と`CYZAdUtil`のファイルと設定を手動で削除してください。
 
 <div id="by_manual"></div>
 
